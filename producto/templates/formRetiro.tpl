@@ -40,6 +40,19 @@
                     </select>
                 </div>
                 <div class="col-sm-12">
+                <select class="browser-default custom-select mb-4" id="select">
+                    <option value="" disabled="" selected="">Tipo material</option>
+                    <option value="a">Envases Plásticos</option>
+                    <option value="b">Botellas de Vidrio</option>
+                    <option value="c">Envases de Aluminio</option>
+                    <option value="d">Cartón</option>
+                    <option value="d">Papel</option>
+                    <option value="d">Tetrabrik</option>
+                    <option value="d">Latas de conservas</option>
+                    <option value="d">Vaios dentro de los materiales aceptados</option>
+                </select>
+            </div>
+                <div class="col-sm-12">
                     <select class="browser-default custom-select mb-4" id="select">
                         <option value="" disabled="" selected="">Volumen del material</option>
                         <option value="a">a) entra en una caja.</option>
