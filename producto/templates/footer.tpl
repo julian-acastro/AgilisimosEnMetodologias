@@ -1,7 +1,6 @@
-<footer class="table table-hover table-dark">
-   
- 
- <p class="text-center">| © 2021 COOPERATIVA DE RECICLADORES URBANOS DE TANDIL |</p>
+
+<footer class="table table-hover bg-success-gradiant">
+    <p class="text-center">| © 2021 COOPERATIVA DE RECICLADORES URBANOS DE TANDIL |</p>
 </footer>
 
 
