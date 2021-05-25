@@ -35,7 +35,7 @@
                         <a class="navbar-brand" href="solicitudDeRetiro">Solicitud de retiro</a> </li>
                     <li class="nav-item active">
                         <a class="navbar-brand" href="ciudadanoBuenaOnda">Ciudadano Buena Onda</a></li>
-                    {if $User=='admin'}
+            <!--        {if $User=='admin'}
                     <li class="nav-item active">
                         <a class="navbar-brand" href="postular"><b style='color:orange'>Postular para retiro</b><span></span></a></li>
                     {/if}
@@ -55,7 +55,7 @@
 
                     <li class="nav-item active">
                         <a class="navbar-brand" href='cerrar_sesion'><b style='color:orange'>{$usuario} - Logout </b></a></li>
-                    {/if}
+                    {/if}-->
 
                 </ul>
 
