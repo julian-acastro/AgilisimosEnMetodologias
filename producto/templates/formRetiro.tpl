@@ -1,5 +1,4 @@
 {include 'header.tpl'}
-<div class="card shadow bg-white rounded">
     <!--Card-Body-->
     <div class="card-body">
         <!--Card-Title-->
@@ -82,5 +81,4 @@
             </div>
         </div>
     </div>
-</div>
 {include 'footer.tpl'}
