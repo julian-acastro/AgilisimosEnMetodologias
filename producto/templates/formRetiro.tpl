@@ -49,7 +49,7 @@
                     <option value="d">Papel</option>
                     <option value="d">Tetrabrik</option>
                     <option value="d">Latas de conservas</option>
-                    <option value="d">Vaios dentro de los materiales aceptados</option>
+                    <option value="d">Varios, dentro de los materiales aceptados</option>
                 </select>
             </div>
                 <div class="col-sm-12">
