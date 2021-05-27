@@ -40,14 +40,14 @@ body {
   color: #8d97ad;
 }
 
-.header2 .h2-nav .navbar-nav .nav-item .nav-link {
+.nav-link {
   padding: 12px 0px;
-  color: #ffffff;
+  color: #000000;
   font-weight: 400;
 }
 
-.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
-  color: #263238;
+.nav-link:hover {
+  color: #ffffff;
 }
 
 .header2 .h2-nav .navbar-nav .nav-item {

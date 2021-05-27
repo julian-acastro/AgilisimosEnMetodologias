@@ -1,19 +1,12 @@
 <div class="row col-lg-12 justify-content-center">
   <div class="col-lg-12 text-center mb-5 mt-3">
-    <h1>Materiales aceptados</h1>
+    <h1>Materiales Aceptados</h1>
   </div>
   <!--Material 1-->
 
-  <div class="col-4 my-auto">
+  <div class="col-4">
     <div
-      class="p-1 m-1 justify-content-center
-        oferta_Card
-        row
-        bg-light
-        border
-        rounded
-      "
-    >
+      class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded">
       <div class="col-lg-12 row p-2">
         <h3 class="text-center"><b>Aluminio</b></h3>
         <div class="border bg-white mb-2 p-2 col-12 rounded">
@@ -38,16 +31,8 @@
     </div>
   </div>
   <!--Material 2-->
-  <div class="col-4 my-auto">
-    <div
-      class="p-1 m-1 justify-content-center
-        oferta_Card
-        row
-        bg-light
-        border
-        rounded
-      "
-    >
+  <div class="col-4">
+    <div class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded">
       <div class="col-lg-12 row p-2">
         <h3 class="text-center"><b>Cartón</b></h3>
         <div class="border bg-white col-12 mb-2 p-2 rounded">
@@ -70,16 +55,8 @@
     </div>
   </div>
   <!--Material 3-->
-  <div class="col-4 my-auto">
-    <div
-      class="p-1 m-1 justify-content-center
-        oferta_Card
-        row
-        bg-light
-        border
-        rounded
-      "
-    >
+  <div class="col-4">
+    <div class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded " >
       <div class="col-lg-12 row p-2">
         <h3 class="text-center"><b>Plásticos</b></h3>
         <div class="border bg-white col-12 mb-2 p-2 rounded">
@@ -101,15 +78,7 @@
   </div>
    <!--Material 4-->
   <div class="col-4 my-auto">
-    <div
-      class="p-1 m-1 justify-content-center
-        oferta_Card
-        row
-        bg-light
-        border
-        rounded
-      "
-    >
+    <div class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded " >
       <div class="col-lg-12 row p-2">
         <h3 class="text-center"><b>Papel</b></h3>
         <div class="border bg-white col-12 mb-2 p-2 rounded">
@@ -133,15 +102,7 @@
   </div>
    <!--Material 5-->
   <div class="col-4 my-auto">
-    <div
-      class="p-1 m-1 justify-content-center
-        oferta_Card
-        row
-        bg-light
-        border
-        rounded
-      "
-    >
+    <div class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded " >
     <div class="col-lg-12 row p-2">
       <h3 class="text-center"><b>Vidrio</b></h3>
       <div class="border bg-white col-12 mb-2 p-2 rounded">
