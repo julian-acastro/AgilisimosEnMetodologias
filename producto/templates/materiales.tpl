@@ -5,8 +5,7 @@
   <!--Material 1-->
 
   <div class="col-4">
-    <div
-      class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded">
+    <div class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded">
       <div class="col-lg-12 row p-2">
         <h3 class="text-center"><b>Aluminio</b></h3>
         <div class="border bg-white mb-2 p-2 col-12 rounded">
