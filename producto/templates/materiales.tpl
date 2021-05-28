@@ -3,7 +3,6 @@
     <h1>Materiales Aceptados</h1>
   </div>
   <!--Material 1-->
-
   <div class="col-4">
     <div
       class="p-1 m-1 justify-content-center oferta_Card row bg-light border rounded">
@@ -43,15 +42,30 @@
             </li>
           </ul>
         </div>
-        <div class="border bg-white col-12 mb-2 p-2 rounded">
-          <h5>Restricciones:</h5>
-          <ul>
-            <li>No se acepta cartón mojado.</li>
-            <li></li>
-            <li></li>
-          </ul>
+    </div>
+    <!--Material 2-->
+    <div class="col-md-3 m-3">
+        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
+            <div class="col-lg-12 row p-2">
+                <h3 class="text-center"><b>Carton</b></h3>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Formato de entrega:</h5>
+                    <ul>
+                        <li>Las cajas de carton deben estar desarmadas</li>
+                        <li>Limpio</li>
+                        <li>Seco</li>
+                    </ul>
+                </div>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Restricciones:</h5>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>
   <!--Material 3-->
@@ -65,15 +79,30 @@
             <li>No requerimos ningún formato específico para la entrega.</li>
           </ul>
         </div>
-        <div class="border bg-white col-12 mb-2 p-2 rounded">
-          <h5>Restricciones:</h5>
-          <ul>
-            <li>No se aceptan envases de yogur.</li>
-            <li>No se aceptan envases de queso blanco.</li>
-            
-          </ul>
+    </div>
+    <!--Material 4-->
+    <div class="col-md-3 m-3">
+        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
+            <div class="col-lg-12 row p-2">
+                <h3 class="text-center"><b>Latas de Conserva</b></h3>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Formato de entrega:</h5>
+                    <ul>
+                        <li>Aplastadas</li>
+                        <li>Secas</li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Restricciones:</h5>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>
    <!--Material 4-->
@@ -89,15 +118,30 @@
             </li>
           </ul>
         </div>
-        <div class="border bg-white col-12 mb-2 p-2 rounded">
-          <h5>Restricciones:</h5>
-          <ul>
-            <li>No se acepta papel mojado.</li>
-            <li>No se acepta papel sucio.</li>
-            <li></li>
-          </ul>
+    </div>
+    <!--Material 6-->
+    <div class="col-md-3 m-3">
+        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
+            <div class="col-lg-12 row p-2">
+                <h3 class="text-center"><b>Tetrabrik</b></h3>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Formato de entrega:</h5>
+                    <ul>
+                        <li>Aplastados</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="border bg-white col-12 mb-2 p-2">
+                    <h5>Restricciones:</h5>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>
    <!--Material 5-->
@@ -122,6 +166,5 @@
         </ul>
       </div>
     </div>
-  </div>
 </div>
-
+</div>

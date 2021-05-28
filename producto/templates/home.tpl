@@ -213,6 +213,82 @@
                                     </p>
                                 </div>
                             </div>
+                            <div class="mt-1 mb-1">
+                                <span>hora:<br /></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-content-center">
+                            <button class="btn btn-primary col-lg-12" type="button">
+                                Postularme
+                            </button>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="text-justify text-body">
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffered alteration in
+                                some form, by injected humour, or randomised words which
+                                don't look even slightly believable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--5 oferta-->
+                <div class="col-md-11">
+                    <div class="oferta_Card row p-2 bg-light border rounded">
+                        <div class="col-md-6 mt-1">
+                            <h5>Oferta transporte</h5>
+                            <div class="mt-1 mb-1">
+                                <span>espacio:</span>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <span>dia:</span>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <span>hora:<br /></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-content-center">
+                            <button class="btn btn-primary col-lg-12" type="button">
+                                Postularme
+                            </button>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="text-justify text-body">
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffered alteration in
+                                some form, by injected humour, or randomised words which
+                                don't look even slightly believable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--6 oferta-->
+                <div class="col-md-11">
+                    <div class="oferta_Card row p-2 bg-light border rounded">
+                        <div class="col-md-6 mt-1">
+                            <h5>Oferta transporte</h5>
+                            <div class="mt-1 mb-1">
+                                <span>espacio:</span>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <span>dia:</span>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <span>hora:<br /></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-content-center">
+                            <button class="btn btn-primary col-lg-12" type="button">
+                                Postularme
+                            </button>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="text-justify text-body">
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffered alteration in
+                                some form, by injected humour, or randomised words which
+                                don't look even slightly believable.
+                            </p>
                         </div>
                     </div>
                 </div>
