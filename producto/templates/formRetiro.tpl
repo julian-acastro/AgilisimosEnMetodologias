@@ -10,7 +10,7 @@
             <div class="form-contain">
                 <div class="col-sm-12">
                     <input placeholder="&#xf2b9; Nombre" type="text" id="date-picker-example"
-                        class="form-control datepicker mb-4" style="font-family: Arial, FontAwesome" />
+                        class="form-control mb-4" style="font-family: Arial, FontAwesome" />
                 </div>
                 <div class="col-sm-12">
                     <input placeholder="&#xf2b9; Apellido" type="text" id="date-picker-example"
@@ -25,10 +25,8 @@
                         class="form-control datepicker" style="font-family: Arial, FontAwesome" />
                 </div>
                 <div class="col-sm-12">
-                    <select class="form-select browser-default custom-select mb-4" id="select">
-                        <option value="" disabled="" selected="">
-                            Distancia al centro de acopio
-                        </option>
+                    <select class="text-secondary form-select browser-default custom-select mb-4" id="select">
+                        <option value="" selected>Distancia al centro de acopio</option>
                         <option value="1">1 Km</option>
                         <option value="2">2 Km</option>
                         <option value="3">3 Km</option>
@@ -39,7 +37,7 @@
                     </select>
                 </div>
                 <div class="col-sm-12">
-                    <select class="form-select browser-default custom-select mb-4" id="select">
+                    <select class="text-secondary form-select browser-default custom-select mb-4" id="select">
                         <option value="" disabled="" selected="">Tipo material</option>
                         <option value="a">Envases Plásticos</option>
                         <option value="b">Botellas de Vidrio</option>
@@ -52,7 +50,7 @@
                     </select>
                 </div>
                 <div class="col-sm-12">
-                    <select class="form-select browser-default custom-select mb-4" id="select">
+                    <select class="text-secondary form-select browser-default custom-select mb-4" id="select">
                         <option value="" disabled="" selected="">Volumen del material</option>
                         <option value="a">a) entra en una caja.</option>
                         <option value="b">b) entra en el baúl de un auto.</option>
@@ -62,7 +60,7 @@
                 </div>
                 <p class="searchText"><span>Franja horaria de retiro</span></p>
                 <div class="col-sm-12">
-                    <select class="form-select browser-default custom-select mb-4" id="select">
+                    <select class="text-secondary form-select browser-default custom-select mb-4" id="select">
                         <option value="" disabled="" selected="">Elija turno</option>
                         <option value="1">Turno mañana de 9 am a 12 am</option>
                         <option value="2">Turno tarde de 13 pm a 17 pm</option>
@@ -71,7 +69,7 @@
                 <p class="searchText"><span>Cargar Imagen</span></p>
                 <div class="col-sm-12">
                     <div class="custom-file">
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="text-secondary form-control" type="file" id="customFile">
                     </div>
                 </div>
                 <div class="col-lg-12 justify-content-end">
