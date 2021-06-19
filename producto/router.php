@@ -83,9 +83,9 @@ case 'ventaMateriales':
     $controller= new VentaMaterialesController();
     $controller->showVentaMateriales();
 break;
-  
 
- 
-        
-       
-    }
+case 'altaMaterial':
+    $controller = new MaterialesController();
+    $controller->showFormMaterial();
+break;
+}

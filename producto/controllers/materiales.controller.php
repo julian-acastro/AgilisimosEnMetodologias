@@ -6,12 +6,15 @@ class MaterialesController{
  //   private $logueado;
     public function __construct()
     {
-       
         $this->view = new MaterialesView();
     }
 
     public function showMateriales(){
         $this->view->materiales();
+    }
+
+    public function showFormMaterial(){
+        $this->view->showFormMaterial();
     }
 
 }
