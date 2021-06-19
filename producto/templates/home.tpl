@@ -20,8 +20,6 @@
                     </p>
                 </div>
             </div>
-         
-        
         <!--Seccion materiales-->
         {include 'materiales.tpl'}
   

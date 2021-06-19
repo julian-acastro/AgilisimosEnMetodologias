@@ -13,7 +13,6 @@
                             <th scope="col">Direccion</th>
                             <th scope="col">Marerial a retirar</th>
                             <th scope="col">Volumen</th>
-                            <th scope="col">Turno</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,7 +22,6 @@
                             <td>Otto</td>
                             <td>@mdo</td>
                             <td>Mark</td>
-                            <td>Otto</td>
                         </tr>
                     </tbody>
                 </table>
