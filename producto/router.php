@@ -88,4 +88,9 @@ case 'altaMaterial':
     $controller = new MaterialesController();
     $controller->showFormMaterial();
 break;
+
+case 'pedidoDeRetiro':
+    $controller = new RetiroController();
+    $controller->showListRetiro();
+break;
 }

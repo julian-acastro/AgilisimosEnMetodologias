@@ -6,12 +6,15 @@ class RetiroController{
  //   private $logueado;
     public function __construct()
     {
-       
         $this->view = new RetiroView();
     }
 
     public function showFormRetiro(){
         $this->view->vistaFormRetiro();
+    }
+
+    public function showListRetiro(){
+        $this->view->vistaListaRetiro();
     }
 
 }
