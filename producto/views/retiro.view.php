@@ -7,7 +7,8 @@ class RetiroView extends Views{
         $this->smarty->display('formRetiro.tpl');
     }
 
-    public function vistaListaRetiro(){
+    public function vistaListaRetiro($pedidos){
+        $this->smarty->assign("pedidos", $pedidos);
         $this->smarty->display('pedidosRetiro.tpl');
     }
 

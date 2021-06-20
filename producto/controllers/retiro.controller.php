@@ -1,5 +1,8 @@
 <?php
+
 require_once 'views/retiro.view.php';
+require_once 'models/pedidosRetiro.model.php';
+
 class RetiroController
 {
     private $model;
@@ -12,6 +15,7 @@ class RetiroController
         $this->maxPesoImg = 1100000;
         $this->min = 1;
         $this->max = 12;
+        $this->modelPedidos = new ModelPedidosDeRetiro();
     }
 
     public function showFormRetiro()
@@ -21,7 +25,7 @@ class RetiroController
 
     public function showListRetiro()
     {
-        $this->view->vistaListaRetiro();
+        $this->view->vistaListaRetiro($this->modelPedidos->getAllpedidos());
     }
 
     public function addRetiro()
