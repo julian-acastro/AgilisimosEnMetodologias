@@ -17,6 +17,7 @@
                     <th scope="col">Formato de entrega</th>
                     <th scope="col">Restricciones</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,10 @@
                     </td>
                     <td>
                         <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="editarMaterial">Editar</a>
+                        
+                    </td>
+                    <td>
+                        <a type="button" class="btn rounded-pill btn-danger text-white py-2 px-4" href="eliminarMaterial">Eliminar</a>
                     </td>
                 </tr>
                 </tbody>
