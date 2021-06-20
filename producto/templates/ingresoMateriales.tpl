@@ -4,12 +4,20 @@
         <form class="shadow align-items-center col-10 row bg-success-gradiant justify-content-around p-3 border mt-3" action="post">
             <div class="d-flex col-md-3">
                 <select class="form-select" name="cartonero" id="cartonero">
-                    <option value="" selected>cartonero</option>
+                    <option value="" selected>Cartonero</option>
+                    {foreach $cartoneros item=cartonero}
+                        <option value="{$cartonero->tipo_dni}/{$cartonero->nro_dni}">
+                            {$cartonero->nombre}, {$cartonero->apellido}
+                        </option>
+                    {/foreach}
                 </select>
             </div>
             <div class="col-md-3">
                 <select name="material" id="material" class="form-select">
-                    <option value="" selected>material</option>
+                 <option value="" selected>Material</option>
+                    {foreach $materiales item=material}
+                        <option value="{$material->ID_material}">{$material->nombre}</option>
+                    {/foreach}
                 </select>
             </div>
             <div class="col-md-3">
@@ -19,25 +27,28 @@
                 <button class="btn btn-primary">Añadir</button>
             </div>
         </form>
-
-        <h1 class="col-10 my-5">Ingresados:</h1>
-        <div class="col-10 ">
-            <table class="shadow table">
-                <thead class="bg-success-gradiant">
-                <tr>
-                    <th scope="col">Cartonero</th>
-                    <th scope="col">Material</th>
-                    <th scope="col">Peso</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        {if $acopios}
+            <h1 class="col-10 my-5">Ingresados:</h1>
+            <div class="col-10 ">
+                <table class="shadow table">
+                    <thead class="bg-success-gradiant">
+                    <tr>
+                        <th scope="col">Cartonero</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Peso</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        {foreach $acopios item=material}
+                            <th>{$material->nombre_cartonero} {$material->apellido}</th>
+                            <td>{$material->nombre_material}</td>
+                            <td>{$material->kilos_acopiados}</td>
+                        {/foreach}
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {/if}
     </div>  
 {include 'footer.tpl'} 

@@ -2,8 +2,6 @@
 require_once 'views/materiales.view.php';
 require_once 'models/materiales.model.php';
 
-
-
 class MaterialesController{
     private $model;
     private $view;
