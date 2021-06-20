@@ -2,7 +2,6 @@
 
 class SystemModel
 {
-
     private $db;
 
     public function __construct()
