@@ -1,5 +1,9 @@
 <?php
 require_once 'views/materiales.view.php';
+require_once 'models/materiales.model.php';
+
+
+
 class MaterialesController{
     private $model;
     private $view;
@@ -7,14 +11,20 @@ class MaterialesController{
     public function __construct()
     {
         $this->view = new MaterialesView();
-    }
-
-    public function showMateriales(){
-        $this->view->materiales();
+        $this->model = new MaterialModel();
     }
 
     public function showFormMaterial(){
         $this->view->showFormMaterial();
+    }
+
+    public function showMateriales()
+    {
+        // pido los materiales al MODELO
+        $materiales = $this->model->getAllMateriales();
+       
+        // actualizo la vista
+        $this->view->materiales($materiales);
     }
 
 }
