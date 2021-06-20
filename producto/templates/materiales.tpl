@@ -1,174 +1,35 @@
-<div class="row justify-content-justify">
-    <div class="col-lg-10 text-center p-4">
-        <h1>Materiales aceptados</h1>
-    </div>
-    <!--Material 1-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Papel</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Seco</li>
-                        <li>Apilado</li>
-                        <li>Sin Suciedad</li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+{include 'header.tpl'}
+<div class="row justify-content-center my-5">
+    <div class="py-3 bg-success-gradiant shadow border rounded-pill row col-8 justify-content-between">
+        <div class="col-9 text-center">
+            <h1>Agregar material aceptado:</h1>
+        </div>
+        <div class="col-3 my-auto">
+            <a type="button" class="btn rounded-pill btn-primary py-2 px-4" href="altaMaterial">Agregar</a>
         </div>
     </div>
-    <!--Material 2-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Carton</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Las cajas de carton deben estar desarmadas</li>
-                        <li>Limpio</li>
-                        <li>Seco</li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Material 3-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Envases de Plastico</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li>Envases de Yogurt</li>
-                        <li>Envases de Queso Blanco</li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Material 4-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Latas de Conserva</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Aplastadas</li>
-                        <li>Secas</li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Material 5-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Envases de Aluminio</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Aplastados</li>
-                        <li>Secos</li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Material 6-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Tetrabrik</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Aplastados</li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-     <!--Material 7-->
-    <div class="col-md-2 m-2">
-        <div class=" oferta_Card row bg-light border rounded justify-content-center ">
-            <div class="col-lg-12 row p-2">
-                <h3 class="text-center"><b>Botellas de Vidrio</b></h3>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Formato de entrega:</h5>
-                    <ul>
-                        <li>Aplastados</li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="border bg-white mb-2 p-2 col-12 rounded text-left">
-                    <h5>Restricciones:</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+  <h1 class="col-10 my-5">Materiales aceptados:</h1>
+    <div class="col-10 ">
+            <table class="shadow table">
+                <thead class="bg-success-gradiant">
+                <tr>
+                    <th scope="col">Material</th>
+                    <th scope="col">Formato de entrega</th>
+                    <th scope="col">Restricciones</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-</div>
+  
+{include 'footer.tpl'} 

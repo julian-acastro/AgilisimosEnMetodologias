@@ -39,6 +39,5 @@
                 </tbody>
             </table>
         </div>
-        
     </div>  
 {include 'footer.tpl'} 

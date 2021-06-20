@@ -1,10 +1,10 @@
 {include 'header.tpl'}
 <!--Contenido-->
 <div class="row">
-    <div class=" col-lg-12 justify-content-center  border-end border-5">
+    <div class=" col-lg-12 justify-content-center  border-end border-5 px-5">
         <!--quienes somos-->
-        <div class="col-lg-12 text-body text-center border p-3">
-                <h1>COOPERATIVA DE RECICLADORES URBANOS TANDIL</h1>
+        <div class="col-lg-12 text-body text-center border p-3 mt-3">
+                <h1 >COOPERATIVA DE RECICLADORES URBANOS TANDIL</h1>
                 <div class="col-lg-11 text-center">
                     <p>
                         El reciclar es un acto de suma importancia para la sociedad ya que el mismo 
@@ -21,8 +21,7 @@
                 </div>
             </div>
         <!--Seccion materiales-->
-        {include 'materiales.tpl'}
-  
+        {include 'homeMateriales.tpl'}
     </div>
 </div>
 </div>

@@ -48,7 +48,7 @@
                                 Admin
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="altaMaterial">Materiales</a></li>
+                                <li><a class="dropdown-item" href="materiales">Materiales</a></li>
                                 <li><a class="dropdown-item" href="ingresoMateriales">Ingreso de materiales</a></li>
                                 <li><a class="dropdown-item" href="pedidoDeRetiro">Pedidos de retiro</a></li>
                             </ul>
