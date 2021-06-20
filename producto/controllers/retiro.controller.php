@@ -51,7 +51,7 @@ class RetiroController
                     $this->view->viewError('La imagen debe pesar 1Mb como maximo y tener una extension jpg o png');
                 } else {
                     $this->model->insert($nombre, $apellido, $direccion, $telefono, $distancia, $material, $franja_horaria, $volumen, $imagen);
-                    $this->view->viewError('El aviso fue cargado exitosamente');
+                    $this->view->viewError('El aviso fue cargado exitosamente'); //avisa si se acepto el aviso de retiro
                 }
             } else {
                 $this->view->viewError('La distancia de su domicilio a la planta supera los Km permitidos');
@@ -63,7 +63,7 @@ class RetiroController
 
     public function verificarDistancia()
     {
-        $num = $this->min; $this->max;
+        $num = rand($this->min, $this->max);
 
         if ($num > $this->maxKm) {
             return false;
@@ -74,8 +74,8 @@ class RetiroController
 
     public function verificarImagen($peso, $extension)
     {
-        if (($peso <= $this->maxPesoImg) && ($extension == "imagen/jpg" || $extension == "imagen/jpeg" || 
-        $extension == "imagen/png")) {
+        if (($peso <= $this->maxPesoImg) && ($extension == "imagen/jpg" || $extension == "imagen/jpeg" ||
+            $extension == "imagen/png")) {
             return true;
         } else {
             return false;
