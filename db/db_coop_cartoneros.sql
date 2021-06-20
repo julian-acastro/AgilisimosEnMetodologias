@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2021 a las 16:58:21
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 20-06-2021 a las 15:41:36
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -86,6 +85,14 @@ CREATE TABLE `material` (
   `restricciones` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `material`
+--
+
+INSERT INTO `material` (`ID_material`, `nombre`, `formato_entrega`, `restricciones`) VALUES
+(2, 'Papel', 'Seco, apilado, sin suciedad', NULL),
+(3, 'Cartón', 'Las cajas deben estar desarmadas, limpias y secas', 'No deben estar armadas, sucias y/o mojadas');
+
 -- --------------------------------------------------------
 
 --
@@ -154,7 +161,7 @@ ALTER TABLE `ciudadano`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `ID_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
