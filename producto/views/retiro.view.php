@@ -10,4 +10,9 @@ class RetiroView extends Views{
     public function vistaListaRetiro(){
         $this->smarty->display('pedidosRetiro.tpl');
     }
+
+    public function viewError($msj = null){
+        $this->smarty->assign("error", $msj);
+        $this->smarty->display('error.tpl');
+    }
 }
