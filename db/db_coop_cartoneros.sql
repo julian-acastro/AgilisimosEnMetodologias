@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2021 a las 00:20:22
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 22-06-2021 a las 01:44:04
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,9 +41,6 @@ CREATE TABLE `acopio` (
 
 INSERT INTO `acopio` (`ID_acopio`, `ID_material`, `tipo_dni`, `nro_dni`, `kilos_acopiados`) VALUES
 (3, 5, 'dni', 25368958, 100.00),
-(4, 4, 'dni', 43664912, 200.00),
-(5, 6, 'dni', 12345678, 123.00),
-(6, 6, 'dni', 25368958, 45.00),
 (7, 5, 'dni', 43664912, 655.00);
 
 -- --------------------------------------------------------
@@ -112,11 +108,8 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`ID_material`, `nombre`, `formato_entrega`, `restricciones`) VALUES
-(1, 'Papel', 'Seco, Apilado, Sin suciedad', 'No posee'),
-(4, 'Cartón', 'Cajas de cartón desarmadas, limpias y secas', 'No se aceptan cajas de cartón húmedas y sucias'),
-(5, 'Plásticos', 'Sin restricciones', 'No se aceptan envases de yogurt y de queso blanco'),
-(6, 'Latas de conserva', 'Aplastadas, secas', 'No deben tener contenido'),
-(8, 'Tetra-Brick', 'Aplastados', 'Sin contenido'),
+(5, 'Plásticos', 'Con muchas restricciones', 'No se aceptan envases de yogurt y de queso blanco'),
+(8, 'Tetra-Brick', 'llenitos', 'Sin contenido'),
 (9, 'Latas de aluminio', 'Aplastadas y secas', 'Sin contenido'),
 (10, 'Botellas de vidrio', 'Enteras y secas', 'Sin roturas mayores y sin contenido');
 
@@ -220,14 +213,14 @@ ALTER TABLE `pedido`
 --
 ALTER TABLE `acopio`
   ADD CONSTRAINT `FK_ACOPIO_CARTONERO` FOREIGN KEY (`tipo_dni`,`nro_dni`) REFERENCES `cartonero` (`tipo_dni`, `nro_dni`),
-  ADD CONSTRAINT `FK_ACOPIO_MATERIAL` FOREIGN KEY (`ID_material`) REFERENCES `material` (`ID_material`);
+  ADD CONSTRAINT `acopio_ibfk_1` FOREIGN KEY (`ID_material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
   ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`),
-  ADD CONSTRAINT `FK_PEDIDO_MATERIAL` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`);
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
