@@ -11,4 +11,10 @@ class MaterialesView extends Views{
     public function showFormMaterial(){
         $this->smarty->display('formAltaMaterial.tpl');
     }
+
+    public function showFormEditarMaterial($material){
+        $this->smarty->assign("material", $material);
+
+        $this->smarty->display('formEditarMaterial.tpl');
+    }
 }

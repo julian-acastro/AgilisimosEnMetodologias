@@ -109,4 +109,15 @@ case 'eliminarMaterial':
     $controller = new MaterialesController();
     $controller->deleteMaterial($parametros[1]);
     break;
+
+case 'editarMaterial':
+    // instanciando un objeto de la clase UserController
+    $controller = new MaterialesController();
+    $controller->showFormEditMaterial($parametros[1]);
+    break;
+
+case 'editMaterial':
+    $controller = new MaterialesController();
+    $controller->editMaterial();
+break;    
 }

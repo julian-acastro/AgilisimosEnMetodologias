@@ -42,8 +42,8 @@ class MaterialesController{
         if(isset($_POST)){
             //asigna los valores a las variables
             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-            $formato = isset($_POST['entrega']) ? $_POST['nombre'] : false;
-            $rechazo = isset($_POST['rechazo']) ? $_POST['nombre'] : null;
+            $formato = isset($_POST['entrega']) ? $_POST['entrega'] : false;
+            $rechazo = isset($_POST['rechazo']) ? $_POST['rechazo'] : null;
 
             
             if($nombre && $formato){
@@ -53,6 +53,31 @@ class MaterialesController{
         }
         //redirige a materiales
         header('Location: ' . BASE_URL . "materiales");
+    }
+
+    public function showFormEditMaterial($ID_material)
+    {
+        // traigo el material
+        $material = $this->model->getMaterial($ID_material);
+        // actualizo la vista
+        $this->view->showFormEditarMaterial($material);
+    }
+
+    public function editMaterial()
+    {
+        // traigo el id del material, del value del boton, con en name id_material_editar
+        $ID_material = $_POST['id_material_editar'];
+        // toma los valores enviados por el formulario
+        $nombre = $_POST['nombre'];
+        $formato_entrega = $_POST['formato_entrega'];
+        $restricciones = $_POST['restricciones'];
+
+        //edito el material
+        $editMaterial = $this->model->editMaterial($ID_material, $nombre, $formato_entrega, $restricciones);
+
+        //redirige a materiales
+        header('Location: ' . BASE_URL . "materiales");
+       // $this->endResult('No se pudo editar! Revise su conexión', 'editar_publicacion/' . $id_car, $editcar, $photos);
     }
 
 }

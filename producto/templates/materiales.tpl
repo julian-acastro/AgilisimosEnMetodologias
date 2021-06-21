@@ -27,7 +27,7 @@
                         <td>{$material->formato_entrega}</td>
                         <td>{$material->restricciones}</td>
                         <td>
-                            <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="editarMaterial">
+                            <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="editarMaterial/{$material->ID_material}">
                                 Editar
                             </a>  
                         </td>
