@@ -1,10 +1,10 @@
 {include 'header.tpl'}
     <div class="row justify-content-center my-5">
         <h1 class="col-10">Ingreso de materiales:</h1>
-        <form class="shadow align-items-center col-10 row bg-success-gradiant justify-content-around p-3 border mt-3" action="post">
+        <form class="shadow align-items-center col-10 row bg-success-gradiant justify-content-around p-3 border mt-3" method="post" action="agregarAcopio">
             <div class="d-flex col-md-3">
                 <select class="form-select" name="cartonero" id="cartonero">
-                    <option value="" selected>Cartonero</option>
+                    <option value="" disabled selected>Cartonero</option>
                     {foreach $cartoneros item=cartonero}
                         <option value="{$cartonero->tipo_dni}/{$cartonero->nro_dni}">
                             {$cartonero->nombre}, {$cartonero->apellido}
@@ -14,14 +14,14 @@
             </div>
             <div class="col-md-3">
                 <select name="material" id="material" class="form-select">
-                 <option value="" selected>Material</option>
+                 <option value="" disabled selected>Material</option>
                     {foreach $materiales item=material}
                         <option value="{$material->ID_material}">{$material->nombre}</option>
                     {/foreach}
                 </select>
             </div>
             <div class="col-md-3">
-                <input class="form-control datepicker" type="number" placeholder="Peso"/>
+                <input class="form-control datepicker" type="number" name="peso" placeholder="Peso"/>
             </div>
             <div class="col-md-3">
                 <button class="btn btn-primary">Añadir</button>
@@ -39,13 +39,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        {foreach $acopios item=material}
+                    {foreach $acopios item=material}
+                        <tr>
                             <th>{$material->nombre_cartonero} {$material->apellido}</th>
                             <td>{$material->nombre_material}</td>
                             <td>{$material->kilos_acopiados}</td>
-                        {/foreach}
-                    </tr>
+                        </tr>
+                    {/foreach}
                     </tbody>
                 </table>
             </div>

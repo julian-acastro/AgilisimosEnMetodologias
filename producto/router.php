@@ -94,6 +94,11 @@ case 'addMaterial':
     $controller->addItem();
 break;
 
+case 'agregarAcopio':
+    $controller = new IngresoMaterialesController();
+    $controller->addAcopio();
+break;
+
 case 'pedidoDeRetiro':
     $controller = new RetiroController();
     $controller->showListRetiro();
