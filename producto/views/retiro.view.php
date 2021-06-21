@@ -3,7 +3,8 @@ require_once ('views/views.php');
 class RetiroView extends Views{
     
 
-    public function vistaFormRetiro(){
+    public function vistaFormRetiro($materiales){
+        $this->smarty->assign("materiales", $materiales);
         $this->smarty->display('formRetiro.tpl');
     }
 

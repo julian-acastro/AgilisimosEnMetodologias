@@ -2,10 +2,13 @@
 
 require_once 'views/retiro.view.php';
 require_once 'models/pedidosRetiro.model.php';
-
+require_once 'models/ciudadanos.model.php';
+require_once 'models/materiales.model.php';
 class RetiroController
 {
-    private $model;
+    private $modelPedidos;
+    private $modelCiudadanos;
+    private $materialesModel;
     private $view;
     //   private $logueado;
     public function __construct()
@@ -16,11 +19,14 @@ class RetiroController
         $this->min = 1;
         $this->max = 12;
         $this->modelPedidos = new ModelPedidosDeRetiro();
+        $this->materialesModel = new MaterialModel();
+        $this->modelCiudadanos = new CiudadanosModel();
     }
 
     public function showFormRetiro()
     {
-        $this->view->vistaFormRetiro();
+        $materiales = $this->materialesModel-> getAllMateriales();
+        $this->view->vistaFormRetiro($materiales);
     }
 
     public function showListRetiro()
@@ -28,7 +34,7 @@ class RetiroController
         $this->view->vistaListaRetiro($this->modelPedidos->getAllpedidos());
     }
 
-    public function addRetiro()
+    public function enviarSolicitud()
     {
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
@@ -38,19 +44,26 @@ class RetiroController
         $material = $_POST['material'];
         $volumen = $_POST['volumen'];
         $franja_horaria =  $_POST['franja_horaria'];
-        $peso = $_FILES["input_name"]["size"]; //devuelve el valor en bytes
-        $extension = $_FILES["input_name"]["type"];
-        $imagen = $_FILES['input_name']['tmp_name'];
+        
+        if(!isset($_FILES)) {
+            $peso = $_FILES["imagen"]["size"]; //devuelve el valor en bytes
+            $extension = $_FILES["imagen"]["type"];
+            $imagen = $_FILES['imagen']['tmp_name'];
+        }
+        
+        //var_dump($nombre, $apellido, $direccion, $telefono, $material, $franja_horaria, $distancia, $direccion, $volumen);die;
 
         if (
             !empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($distancia) && !empty($material) &&
             !empty($franja_horaria) && !empty($volumen)
         ) {
-            if ($this->verificarDistancia() == true) {
+            if ((int)$distancia) {
                 if (!empty($imagen) && $this->verificarImagen($peso, $extension) == false) {
                     $this->view->viewError('La imagen debe pesar 1Mb como maximo y tener una extension jpg o png');
                 } else {
-                    $this->model->insert($nombre, $apellido, $direccion, $telefono, $distancia, $material, $franja_horaria, $volumen, $imagen);
+                    $id_ciudadano = $this->modelCiudadanos->addCiudadano($nombre, $apellido, $direccion, $telefono);
+                    $this->modelPedidos->addSolicitud($id_ciudadano, $material, $franja_horaria, $distancia, $imagen = NULL, $direccion, $volumen);
+                                             
                     $this->view->viewError('El aviso fue cargado exitosamente'); //avisa si se acepto el aviso de retiro
                 }
             } else {

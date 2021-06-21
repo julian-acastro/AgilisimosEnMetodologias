@@ -39,7 +39,11 @@
         case 'solicitudDeRetiro': 
             $controller= new RetiroController();
             $controller->showFormRetiro();           
-           
+        break;
+
+        case 'enviarSolicitud': 
+            $controller= new RetiroController();
+            $controller->enviarSolicitud();           
         break;
 
         case 'ciudadanoBuenaOnda':       

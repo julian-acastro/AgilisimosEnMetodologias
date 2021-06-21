@@ -17,4 +17,16 @@ class ModelPedidosDeRetiro extends SystemModel
         $pedidos = $sentencia->fetchAll(PDO::FETCH_OBJ); // obtiene la respuesta
         return $pedidos;
     }
+
+    /**
+     * Agrega el material a la base de datos
+     */
+    public function addSolicitud($ciudadano, $material, $franja_horaria, $cumple_retiro, $imagen, $direccion, $volumen){
+        $db = $this->getDb();
+        $consulta = "INSERT INTO pedido(ciudadano, material, franja_horaria, cumple_retiro, imagen, direccion, fecha_y_hora, volumen) 
+                                VALUES(?,?,?,?,?,?,?,?)";
+        $fecha_y_hora = date("Y-m-d H:i");
+        $query = $db->prepare($consulta);//prepara la consulta
+        $query->execute([$ciudadano, $material, $franja_horaria, $cumple_retiro, $imagen, $direccion, $fecha_y_hora, $volumen]);//ejecuta la consulta
+    }
 }
