@@ -22,6 +22,11 @@ class MaterialModel extends SystemModel
         $db = $this->getDb();
         $query = $db->prepare("INSERT INTO material(nombre, formato_entrega,restricciones) VALUES(?,?,?)");//prepara la consulta
         $query->execute([$nombre,$formato,$rechazo]);//ejecuta la consulta
+    }
 
+    public function deleteMaterial($ID){
+        // enviamos la consulta
+        $query = $this->getDb()->prepare("DELETE FROM material WHERE ID_material = ?"); // prepara la consulta
+        return $query->execute([$ID]); // ejecuta 
     }
 }

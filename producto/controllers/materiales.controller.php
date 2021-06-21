@@ -24,6 +24,15 @@ class MaterialesController{
         $this->view->materiales($materiales);
     }
 
+    public function deleteMaterial($ID){
+        if(!isset($ID)){
+            header('Location: ' . BASE_URL . "materiales");
+            die;
+        }
+        $this->model->deleteMaterial($ID);
+        header('Location: ' . BASE_URL . "materiales");
+    }
+
     /**
      * Función para gregar nuevos materiales
      * que la cooperativa acopia

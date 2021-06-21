@@ -103,4 +103,10 @@ case 'pedidoDeRetiro':
     $controller = new RetiroController();
     $controller->showListRetiro();
 break;
+
+case 'eliminarMaterial':
+    // instanciando un objeto de la clase UserController
+    $controller = new MaterialesController();
+    $controller->deleteMaterial($parametros[1]);
+    break;
 }

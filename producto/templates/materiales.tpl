@@ -32,7 +32,7 @@
                             </a>  
                         </td>
                         <td>
-                            <a type="button" class="btn rounded-pill btn-danger text-white py-2 px-4" href="eliminarMaterial">
+                            <a type="button" class="btn rounded-pill btn-danger text-white py-2 px-4" href="eliminarMaterial/{$material->ID_material}">
                                 Eliminar
                             </a>
                         </td>
