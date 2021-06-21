@@ -3,7 +3,8 @@ require_once ('views/views.php');
 class MaterialesView extends Views{
     
 
-    public function materiales(){
+    public function materiales($materiales){
+        $this->smarty->assign("materiales", $materiales);
         $this->smarty->display('materiales.tpl');
     }
 

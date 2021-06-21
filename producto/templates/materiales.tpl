@@ -21,20 +21,23 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th>1</th>
-                    <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim delectus excepturi, necessitatibus animi nostrum temporibus modi id quis voluptatum nisi quod fuga repellendus explicabo cumque saepe asperiores tempore veritatis neque?   </td>
-                    <td>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, commodi aspernatur. Molestiae quas est voluptatem eos mollitia deserunt optio alias, laborum totam autem eaque libero dolore saepe aliquam doloribus sint?
-                    </td>
-                    <td>
-                        <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="editarMaterial">Editar</a>
-                        
-                    </td>
-                    <td>
-                        <a type="button" class="btn rounded-pill btn-danger text-white py-2 px-4" href="eliminarMaterial">Eliminar</a>
-                    </td>
-                </tr>
+                {foreach $materiales item=material}
+                    <tr>
+                        <th>{$material->nombre}</th>
+                        <td>{$material->formato_entrega}</td>
+                        <td>{$material->restricciones}</td>
+                        <td>
+                            <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="editarMaterial">
+                                Editar
+                            </a>  
+                        </td>
+                        <td>
+                            <a type="button" class="btn rounded-pill btn-danger text-white py-2 px-4" href="eliminarMaterial">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
