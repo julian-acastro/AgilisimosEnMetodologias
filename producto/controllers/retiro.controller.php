@@ -74,17 +74,6 @@ class RetiroController
         }
     }
 
-    public function verificarDistancia()
-    {
-        $num = rand($this->min, $this->max);
-
-        if ($num > $this->maxKm) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
     public function verificarImagen($peso, $extension)
     {
         if (($peso <= $this->maxPesoImg) && ($extension == "imagen/jpg" || $extension == "imagen/jpeg" ||
