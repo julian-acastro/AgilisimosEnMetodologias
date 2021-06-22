@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2021 a las 01:44:04
+-- Tiempo de generación: 22-06-2021 a las 02:01:51
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -88,7 +88,12 @@ CREATE TABLE `ciudadano` (
 
 INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `telefono`) VALUES
 (1, 'Ciudadano', 'Buena onda', 'Cooperativa', '0303456'),
-(5, 'Juan ', 'Paco', 'Pedro de la Mar 125', '0303456');
+(5, 'Juan ', 'Paco', 'Pedro de la Mar 125', '0303456'),
+(6, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(7, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(8, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(9, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(10, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215');
 
 -- --------------------------------------------------------
 
@@ -136,7 +141,11 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`ID_pedido`, `ciudadano`, `material`, `franja_horaria`, `cumple_retiro`, `imagen`, `direccion`, `fecha_y_hora`, `volumen`) VALUES
-(3, 5, 8, 'Turno tarde de 13 pm a 17 pm', 1, NULL, 'Pedro de la Mar 125', '2021-06-22 03:17:00', 'entra en una caja.');
+(3, 5, 8, 'Turno tarde de 13 pm a 17 pm', 1, NULL, 'Pedro de la Mar 125', '2021-06-22 03:17:00', 'entra en una caja.'),
+(4, 6, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:46:00', 'entra en el baúl de un auto.'),
+(6, 8, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:59:00', 'entra en una caja.'),
+(7, 9, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:59:00', 'entra en una caja.'),
+(8, 10, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 05:00:00', 'entra en una caja.');
 
 --
 -- Índices para tablas volcadas
@@ -172,9 +181,8 @@ ALTER TABLE `material`
 -- Indices de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`ID_pedido`,`ciudadano`,`material`),
-  ADD UNIQUE KEY `AK_CIUDADANO_PEDIDO` (`ciudadano`),
-  ADD UNIQUE KEY `AK_PEDIDO_MATERIAL` (`material`);
+  ADD PRIMARY KEY (`ID_pedido`) USING BTREE,
+  ADD KEY `ciudadano` (`ciudadano`,`material`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -190,7 +198,7 @@ ALTER TABLE `acopio`
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -202,7 +210,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
@@ -219,8 +227,7 @@ ALTER TABLE `acopio`
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`),
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
