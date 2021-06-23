@@ -6,7 +6,7 @@
             Solicitud de retiro de materiales
         </h3>
         <!--Formulario-->
-        <form class="d-flex justify-content-center" method="POST" action="enviarSolicitud">
+        <form class="d-flex justify-content-center" method="POST" enctype="multipart/form-data" action="enviarSolicitud">
             <div class="form-contain">
                 <div class="col-sm-12">
                     <input name="nombre" placeholder="&#xf2b9; Nombre" type="text" id="date-picker-example"
@@ -35,7 +35,7 @@
                         <option value="1">4 Km</option>
                         <option value="1">5 Km</option>
                         <option value="1">6 Km</option>
-                        <option value="0">+6 Km</option>
+                        <option value="7">+6 Km</option>
                     </select>
                 </div>
                 <div class="col-sm-12">
