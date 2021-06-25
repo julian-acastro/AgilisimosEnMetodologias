@@ -5,7 +5,7 @@
         <h3 class="card-title text-center my-3 rounded">
             Solicitud de retiro de materiales
         </h3>
-        <!--Formulario-->
+        <!--Formulario-->        
         <form class="d-flex justify-content-center" method="POST" enctype="multipart/form-data" action="enviarSolicitud">
             <div class="form-contain">
                 <div class="col-sm-12">
@@ -66,8 +66,8 @@
                 <p class="searchText"><span>Cargar Imagen</span></p>
                 <div class="col-sm-12">
                     <div class="custom-file">
-                        <input name="imagen" type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Elegir Imagen...</label>
+                        <input name="imagen" type="file" class="custom-file-input" id="customFile"multiple>
+                        <label class="custom-file-label" for="customFile">Elegir Imagen...</label>                        
                     </div>
                 </div>
                 <div class="col-lg-12 justify-content-end">

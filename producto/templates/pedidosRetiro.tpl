@@ -11,6 +11,7 @@
                             <th scope="col">Direccion</th>
                             <th scope="col">Marerial a retirar</th>
                             <th scope="col">Volumen</th>
+                            <th scope="col">Imagen</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,6 +22,8 @@
                                 <td>{$pedido->direccion}</td>
                                 <td>{$pedido->nombre_material}</td>
                                 <td>{$pedido->volumen}</td>
+                                <td><img src="{$pedido->imagen}"</td>
+                                
                             </tr>
                         {/foreach}
                     </tbody>
