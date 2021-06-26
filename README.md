@@ -6,3 +6,9 @@ Link JIRA: https://juliancastro.atlassian.net/secure/RapidBoard.jspa?projectKey=
 Link MIRO: https://miro.com/app/board/o9J_lFFJudQ=/?userEmail=mekdy.20@gmail.com&track=true&utm_source=notification&utm_medium=email&utm_campaign=add-to-board&utm_content=go-to-board
 
 En la carpeta documentacion se encuentran los archivos: Criterio de Done, Enunciado y el Product Backlog.
+
+
+
+
+
+LA CONTRASEÑA DE LA SECRETARIA ES  " admin "

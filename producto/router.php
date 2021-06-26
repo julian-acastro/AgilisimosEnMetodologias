@@ -9,6 +9,7 @@
     require_once 'controllers/ingresomateriales.controller.php';
     require_once 'controllers/ventamateriales.controller.php';
     require_once 'controllers/registro.controller.php';
+    require_once 'controllers/login.controller.php';
 
     
 
@@ -123,5 +124,21 @@ case 'editarMaterial':
 case 'editMaterial':
     $controller = new MaterialesController();
     $controller->editMaterial();
-break;    
+break;  
+
+//  FUNCION DE LOGIN
+case 'login':
+    $controller = new LoginController();
+    $controller->showFormLogin();
+break;
+
+case 'verifyUser':  //Verifica usuario existente, desde ACTION del formulario
+    $controller = new LoginController();
+    $controller-> verifyUser();
+break;
+
+case 'cerrar_sesion': //Cierra la sesión logueada.
+    $controller = new LoginController();
+    $controller-> endSesion();
+break;
 }

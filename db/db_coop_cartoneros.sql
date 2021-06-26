@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2021 a las 02:01:51
+-- Tiempo de generación: 26-06-2021 a las 02:15:50
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -41,7 +41,9 @@ CREATE TABLE `acopio` (
 
 INSERT INTO `acopio` (`ID_acopio`, `ID_material`, `tipo_dni`, `nro_dni`, `kilos_acopiados`) VALUES
 (3, 5, 'dni', 25368958, 100.00),
-(7, 5, 'dni', 43664912, 655.00);
+(7, 5, 'dni', 43664912, 655.00),
+(8, 10, 'dni', 43664912, 10.00),
+(9, 8, 'dni', 12345678, 40.00);
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,41 @@ INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `tel
 (7, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
 (8, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
 (9, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(10, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215');
+(10, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(11, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(12, 'Adriana', 'Grigoli', 'San Martin 1097', ''),
+(13, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(14, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(15, 'cacho', 'nico', 'pppp', '1023164'),
+(16, 'tito', 'es mejor', 'que nico', '454546465'),
+(17, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(18, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(19, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
+(20, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
+(21, 'Sergio', 'Yañez', 'Barrio Falucho casa 74, SN', '222222'),
+(22, 'Damian', 'Yañez', 'Garralda345', '4444444444'),
+(23, 'Damian', 'Yañez', 'Garralda 123', '7777777777'),
+(24, 'Marti', 'Yañez', 'Barrio Falucho casa 74, SN', '33333333'),
+(25, 'Isa', 'Yañez', 'ALBERTI 560', '4444444444'),
+(26, 'Adriana', 'Grigoli', 'San Martin 1097', '7777777777'),
+(27, 'Adriana', 'Grigoli', 'San Martin 1097', '7777777777'),
+(28, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(29, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(30, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(31, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(32, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(33, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(34, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(35, 'Carmen', 'GrigoliGiusto', 'ALBERTI 560', '222222'),
+(36, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(37, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
+(38, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(39, 'Nico', 'Carsaniga', 'Al fondo', '222222'),
+(40, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
+(41, 'Nico', 'Carsaniga', 'San Martin 1097', '222222'),
+(42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333'),
+(43, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
+(44, 'Elva', 'Kehler', 'Garralda 123', '555555555');
 
 -- --------------------------------------------------------
 
@@ -130,7 +166,7 @@ CREATE TABLE `pedido` (
   `material` int(11) NOT NULL,
   `franja_horaria` varchar(30) NOT NULL,
   `cumple_retiro` tinyint(1) NOT NULL,
-  `imagen` varchar(30) DEFAULT NULL,
+  `imagen` varchar(200) DEFAULT NULL,
   `direccion` varchar(30) NOT NULL,
   `fecha_y_hora` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `volumen` varchar(30) NOT NULL
@@ -141,11 +177,29 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`ID_pedido`, `ciudadano`, `material`, `franja_horaria`, `cumple_retiro`, `imagen`, `direccion`, `fecha_y_hora`, `volumen`) VALUES
-(3, 5, 8, 'Turno tarde de 13 pm a 17 pm', 1, NULL, 'Pedro de la Mar 125', '2021-06-22 03:17:00', 'entra en una caja.'),
-(4, 6, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:46:00', 'entra en el baúl de un auto.'),
-(6, 8, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:59:00', 'entra en una caja.'),
-(7, 9, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 04:59:00', 'entra en una caja.'),
-(8, 10, 5, 'Turno mañana de 9 am a 12 am', 1, NULL, 'San Martin 1097', '2021-06-22 05:00:00', 'entra en una caja.');
+(34, 40, 5, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52d85dfc2d7.54393403.jpg', 'San Martin 1097', '2021-06-25 06:12:00', 'entra en una caja.'),
+(35, 41, 8, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52dad87eaf9.71896316.jpg', 'San Martin 1097', '2021-06-25 06:13:00', 'entra en la caja de una camion'),
+(36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.'),
+(38, 44, 9, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d66e1e40d240.18512162.jpg', 'Garralda 123', '2021-06-26 05:00:00', 'entra en el baúl de un auto.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `secretaria`
+--
+
+CREATE TABLE `secretaria` (
+  `id_usuario` int(11) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `contrasenia` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `secretaria`
+--
+
+INSERT INTO `secretaria` (`id_usuario`, `usuario`, `contrasenia`) VALUES
+(1, 'secretaria', '$2y$10$3kMdKdDng8QgFRypZdw.CuVsXVwdIIcZ4EdFsysN069SbeAeAu.LS');
 
 --
 -- Índices para tablas volcadas
@@ -185,6 +239,12 @@ ALTER TABLE `pedido`
   ADD KEY `ciudadano` (`ciudadano`,`material`);
 
 --
+-- Indices de la tabla `secretaria`
+--
+ALTER TABLE `secretaria`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -192,13 +252,13 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `acopio`
 --
 ALTER TABLE `acopio`
-  MODIFY `ID_acopio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_acopio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -210,7 +270,13 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT de la tabla `secretaria`
+--
+ALTER TABLE `secretaria`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -227,7 +293,8 @@ ALTER TABLE `acopio`
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`);
+  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`),
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
