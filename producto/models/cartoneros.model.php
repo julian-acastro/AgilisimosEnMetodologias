@@ -13,4 +13,18 @@ class CartonerosModel extends SystemModel
         $cartoneros = $sentencia->fetchAll(PDO::FETCH_OBJ); // obtiene la respuesta
         return $cartoneros;
     }
+
+    /**
+     * Traigo todos los datos del cartonero 
+     * por el ID que se le pasa por parametro
+     */
+    public function getUrbanRecuperator($nro_dni){
+
+        $db = $this->getDb();
+        $query = $db->prepare("SELECT * FROM cartonero WHERE nro_dni = ?");
+        $query->execute([$nro_dni]);
+        $urbanRecuperator = $query->fetch(PDO::FETCH_OBJ);
+
+        return $urbanRecuperator;
+    }
 }
