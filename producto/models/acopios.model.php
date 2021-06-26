@@ -19,6 +19,20 @@ class AcopiosModel extends SystemModel
         return $acopios;
     }
 
+    public function getAllAcopiosbyKilos()
+    {
+        $consulta = "SELECT a.nro_dni,SUM(a.kilos_acopiados) AS kilos_acopiados,m.nombre AS nombre_material
+                    FROM acopio a 
+                    INNER JOIN material m ON (a.ID_material=m.ID_material)
+                    GROUP BY a.ID_material,a.nro_dni
+                    ";
+        //envia la consulta
+        $sentencia = $this->getDb()->prepare($consulta); // prepara la consulta
+        $sentencia->execute(); // ejecuta
+        $acopios = $sentencia->fetchAll(PDO::FETCH_OBJ); // obtiene la respuesta
+        return $acopios;
+    }
+
     public function addAcopio($ID_material, $tipo_dni, $nro_dni,$kilos_acopiados){
         $db = $this->getDb();
         $query = $db->prepare("INSERT INTO acopio (ID_material,tipo_dni,nro_dni,kilos_acopiados) VALUES(?,?,?,?)");//prepara la consulta

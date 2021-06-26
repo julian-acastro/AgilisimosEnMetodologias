@@ -52,28 +52,30 @@
             <h2 class="col-10 my-5">Materiales por caronero:</h2>
             <div class="col-10">
                 {foreach $cartoneros item=cartonero}
-                    <div class="shadow accordion" id="accordionExample">
+                    <div class="shadow accordion my-3" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{$cartonero->nro_dni}" aria-expanded="true" aria-controls="collapseOne{$cartonero->nro_dni}">
-                                {$cartonero->nombre} {$cartonero->apellido}
+                               <p class="my-2">
+                               <b class="nombre">{$cartonero->nombre} {$cartonero->apellido} </b>  | Tipo Identificación: {$cartonero->tipo_dni} | Numeracion: {$cartonero->nro_dni}
+                               </p> 
                             </button>
                             </h2>
                             <div id="collapseOne{$cartonero->nro_dni}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                   <table class="table">
+                                   <table class="table shadow-sm my-3">
                                         <thead class="bg-success-gradiant">
                                             <tr>
                                                 <th scope="col">Material</th>
-                                                <th scope="col">Peso</th>
+                                                <th scope="col">Peso total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {foreach $acopios item=material}
-                                            {if $cartonero->nro_dni === $material->nro_dni}
+                                        {foreach $totalMaterialesCartonero item=totalMaterialCartonero}
+                                            {if $cartonero->nro_dni === $totalMaterialCartonero->nro_dni}
                                                 <tr>
-                                                    <td>{$material->nombre_material}</td>
-                                                    <td>{$material->kilos_acopiados}</td>
+                                                    <td>{$totalMaterialCartonero->nombre_material}</td>
+                                                    <td>{$totalMaterialCartonero->kilos_acopiados}</td>
                                                 </tr>
                                             {/if}
                                         {/foreach}
