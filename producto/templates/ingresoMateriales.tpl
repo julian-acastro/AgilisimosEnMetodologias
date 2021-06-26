@@ -49,6 +49,21 @@
                     </tbody>
                 </table>
             </div>
+            <h2 class="col-10 my-5">Materiales por caronero:</h2>
+            <div class="col-10">
+                {foreach $cartoneros item=cartonero}
+                    <div class="shadow accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{$cartonero->nro_dni}" aria-expanded="true" aria-controls="collapseOne{$cartonero->nro_dni}">
+                                {$cartonero->nombre} {$cartonero->apellido}
+                            </button>
+                            </h2>
+                            
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
         {/if}
     </div>  
 {include 'footer.tpl'} 

@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 25-06-2021 a las 04:12:14
-=======
 -- Tiempo de generación: 26-06-2021 a las 02:15:50
->>>>>>> tito
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -131,13 +127,9 @@ INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `tel
 (39, 'Nico', 'Carsaniga', 'Al fondo', '222222'),
 (40, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
 (41, 'Nico', 'Carsaniga', 'San Martin 1097', '222222'),
-<<<<<<< HEAD
-(42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333');
-=======
 (42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333'),
 (43, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
 (44, 'Elva', 'Kehler', 'Garralda 123', '555555555');
->>>>>>> tito
 
 -- --------------------------------------------------------
 
@@ -187,9 +179,6 @@ CREATE TABLE `pedido` (
 INSERT INTO `pedido` (`ID_pedido`, `ciudadano`, `material`, `franja_horaria`, `cumple_retiro`, `imagen`, `direccion`, `fecha_y_hora`, `volumen`) VALUES
 (34, 40, 5, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52d85dfc2d7.54393403.jpg', 'San Martin 1097', '2021-06-25 06:12:00', 'entra en una caja.'),
 (35, 41, 8, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52dad87eaf9.71896316.jpg', 'San Martin 1097', '2021-06-25 06:13:00', 'entra en la caja de una camion'),
-<<<<<<< HEAD
-(36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.');
-=======
 (36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.'),
 (38, 44, 9, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d66e1e40d240.18512162.jpg', 'Garralda 123', '2021-06-26 05:00:00', 'entra en el baúl de un auto.');
 
@@ -211,7 +200,6 @@ CREATE TABLE `secretaria` (
 
 INSERT INTO `secretaria` (`id_usuario`, `usuario`, `contrasenia`) VALUES
 (1, 'secretaria', '$2y$10$3kMdKdDng8QgFRypZdw.CuVsXVwdIIcZ4EdFsysN069SbeAeAu.LS');
->>>>>>> tito
 
 --
 -- Índices para tablas volcadas
@@ -270,11 +258,7 @@ ALTER TABLE `acopio`
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-<<<<<<< HEAD
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-=======
   MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
->>>>>>> tito
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -286,9 +270,6 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-<<<<<<< HEAD
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-=======
   MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
@@ -296,7 +277,6 @@ ALTER TABLE `pedido`
 --
 ALTER TABLE `secretaria`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> tito
 
 --
 -- Restricciones para tablas volcadas

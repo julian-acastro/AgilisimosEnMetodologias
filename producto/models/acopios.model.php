@@ -7,7 +7,7 @@ class AcopiosModel extends SystemModel
     // Devuelve todos los acopios.
     public function getAllAcopios()
     {
-        $consulta = "SELECT a.kilos_acopiados,c.nombre AS nombre_cartonero,c.apellido,m.nombre AS nombre_material
+        $consulta = "SELECT a.kilos_acopiados,c.nro_dni,c.nombre AS nombre_cartonero,c.apellido,m.nombre AS nombre_material
                     FROM acopio a 
                     INNER JOIN cartonero c ON (a.tipo_dni=c.tipo_dni AND a.nro_dni=c.nro_dni)
                     INNER JOIN material m ON (a.ID_material=m.ID_material)
