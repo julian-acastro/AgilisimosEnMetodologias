@@ -1,5 +1,6 @@
 <?php
 require_once 'views/cartoneros.view.php';
+require_once 'models/cartoneros.model.php';
 class CartonerosController
 {
     private $model;
@@ -19,6 +20,11 @@ class CartonerosController
     public function showFormCartonero()
     {
         $this->view->showFormCartonero();
+    }
+
+    public function listaCartoneros(){
+        $cartoneros = $this->model->getAll();
+        $this->view->listaCartoneros($cartoneros);
     }
 
     /**
