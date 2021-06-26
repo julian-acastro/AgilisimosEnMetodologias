@@ -61,7 +61,24 @@
                             </h2>
                             <div id="collapseOne{$cartonero->nro_dni}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                   
+                                   <table class="table">
+                                        <thead class="bg-success-gradiant">
+                                            <tr>
+                                                <th scope="col">Material</th>
+                                                <th scope="col">Peso</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {foreach $acopios item=material}
+                                            {if $cartonero->nro_dni === $material->nro_dni}
+                                                <tr>
+                                                    <td>{$material->nombre_material}</td>
+                                                    <td>{$material->kilos_acopiados}</td>
+                                                </tr>
+                                            {/if}
+                                        {/foreach}
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
