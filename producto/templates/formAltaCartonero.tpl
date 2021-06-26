@@ -17,10 +17,10 @@
                 <label for="tipo_dni" class="form-label">Tipo Documento</label>
                 <select class="form-select" name="tipo_dni" id="tipo_dni" aria-describedby="emailHelp">
                     <option selected>Seleccione el tipo de documento</option>
-                    <option value="1">DNI</option>
-                    <option value="2">LE</option>
-                    <option value="3">LC</option>
-                    <option value="4">CI</option>
+                    <option value="DNI">DNI</option>
+                    <option value="LE">LE</option>
+                    <option value="LC">LC</option>
+                    <option value="CI">CI</option>
                 </select>
             </div>
             <div class="col">
@@ -41,11 +41,11 @@
             <select class="form-select" name="vehiculo" id="vehiculo" placeholder="Ingrese Marca y Modelo"
                 aria-describedby="emailHelp">
                 <option selected>Seleccione el tipo de vehículo</option>
-                <option value="1">Bicicleta</option>
-                <option value="2">Moto</option>
-                <option value="3">Auto</option>
-                <option value="4">Camioneta</option>
-                <option value="5">Camión</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="Moto">Moto</option>
+                <option value="Auto">Auto</option>
+                <option value="Camioneta">Camioneta</option>
+                <option value="Camión">Camión</option>
             </select>
             <!--<input type="text" class="form-control" name="vehiculo" id="vehiculo" placeholder="Ingrese Marca y Modelo" aria-describedby="emailHelp"> -->
         </div>

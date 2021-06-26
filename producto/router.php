@@ -130,9 +130,14 @@ switch ($parametros[0]) {
         $controller->listaCartoneros();
         break;
 
-    case 'altaCartonero': //esto hay q linkearlo desde el listado de cartoneros!!!!
+    case 'altaCartonero':
         $controller = new CartonerosController();
         $controller->showFormCartonero();
+        break;
+
+    case 'addCartonero':
+        $controller = new CartonerosController();
+        $controller->addCartonero();
         break;
 
         //  FUNCION DE LOGIN
