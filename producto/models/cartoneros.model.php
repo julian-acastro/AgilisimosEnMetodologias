@@ -27,4 +27,25 @@ class CartonerosModel extends SystemModel
 
         return $urbanRecuperator;
     }
+
+    /**
+     * verifica que no exista un cartonero con el mismo
+     * tipo y número de documento
+     */
+    public function verifyExist($doc_type, $doc_nro){
+
+        $db = $this->getDb();
+        $query = $db->prepare("SELECT * FROM cartonero WHERE tipo_dni = ? AND nro_dni = ?");
+        $query->execute([$doc_type, $doc_nro]);
+        $exist = $query->fetch(PDO::FETCH_OBJ);
+
+        return $exist;
+    }
+
+    public function confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro){
+        //var_dump($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle,$oldType, $oldNro);die();
+        $db = $this->getDb();
+        $query = $db->prepare("UPDATE cartonero SET nombre=?, apellido=?, tipo_dni=?, nro_dni=?, direccion=?, fecha_nac=?, vehiculo=? WHERE tipo_dni = ? AND nro_dni = ?");
+        $query->execute([$name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro]);
+    }
 }

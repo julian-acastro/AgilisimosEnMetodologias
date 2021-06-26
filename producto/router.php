@@ -150,4 +150,9 @@ switch ($parametros[0]) {
         $controller = new CartonerosController();
         $controller->editFormUR($parametros[1]);
         break;
+    
+    case 'confirmEdit':
+        $controller = new CartonerosController();
+        $controller->confirmEdit();
+        break;
 }
