@@ -14,4 +14,9 @@ class CartonerosController{
         $this->view->cartoneros();
     }
 
+    public function showFormCartonero(){
+        $this->view->showFormCartonero();
+    }
+
+
 }

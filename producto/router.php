@@ -124,4 +124,9 @@ case 'editMaterial':
     $controller = new MaterialesController();
     $controller->editMaterial();
 break;    
+
+case 'altaCartonero': //esto hay q linkearlo desde el listado de cartoneros!!!!
+    $controller = new CartonerosController();
+    $controller->showFormCartonero();
+break;
 }
