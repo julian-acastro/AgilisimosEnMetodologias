@@ -11,6 +11,11 @@ class CartonerosView extends Views{
         $this->smarty->display('formAltaCartonero.tpl');
     }
 
+    public function listaCartoneros($cartoneros){
+        $this->smarty->assign('cartoneros', $cartoneros);
+        $this->smarty->display('cartoneros.tpl');
+    }
+
     public function editFormUR($urbanRecuperator){
 
         $this->smarty->assign('urbanRecuperator', $urbanRecuperator);

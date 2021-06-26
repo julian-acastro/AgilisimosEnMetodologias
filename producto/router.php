@@ -67,10 +67,10 @@ switch ($parametros[0]) {
         break;
         // FUNCIONES DE ADMINISTRADOR
 
-    case 'cartoneros':
+    /*case 'cartoneros':
         $controller = new CartonerosController();
         $controller->showCartoneros();
-        break;
+        break;*/
 
     case 'materiales':
         $controller = new MaterialesController();
@@ -123,6 +123,11 @@ switch ($parametros[0]) {
     case 'editMaterial':
         $controller = new MaterialesController();
         $controller->editMaterial();
+        break;
+
+    case 'listaCartoneros':
+        $controller = new CartonerosController();
+        $controller->listaCartoneros();
         break;
 
     case 'altaCartonero': //esto hay q linkearlo desde el listado de cartoneros!!!!

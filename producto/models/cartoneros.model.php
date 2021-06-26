@@ -14,6 +14,15 @@ class CartonerosModel extends SystemModel
         return $cartoneros;
     }
 
+    public function getAll()
+    {
+        //envia la consulta
+        $sentencia = $this->getDb()->prepare("SELECT * FROM cartonero"); // prepara la consulta
+        $sentencia->execute(); // ejecuta
+        $cartoneros = $sentencia->fetchAll(PDO::FETCH_OBJ); // obtiene la respuesta
+        return $cartoneros;
+    }
+
     /**
      * Traigo todos los datos del cartonero 
      * por el ID que se le pasa por parametro
