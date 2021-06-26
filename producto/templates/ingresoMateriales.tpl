@@ -59,7 +59,11 @@
                                 {$cartonero->nombre} {$cartonero->apellido}
                             </button>
                             </h2>
-                            
+                            <div id="collapseOne{$cartonero->nro_dni}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                   
+                                </div>
+                            </div>
                         </div>
                     </div>
                 {/foreach}
