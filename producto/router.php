@@ -9,6 +9,7 @@
     require_once 'controllers/ingresomateriales.controller.php';
     require_once 'controllers/ventamateriales.controller.php';
     require_once 'controllers/registro.controller.php';
+    require_once 'controllers/login.controller.php';
 
     
 
@@ -128,5 +129,21 @@ break;
 case 'altaCartonero': //esto hay q linkearlo desde el listado de cartoneros!!!!
     $controller = new CartonerosController();
     $controller->showFormCartonero();
+break;  
+
+//  FUNCION DE LOGIN
+case 'login':
+    $controller = new LoginController();
+    $controller->showFormLogin();
+break;
+
+case 'verifyUser':  //Verifica usuario existente, desde ACTION del formulario
+    $controller = new LoginController();
+    $controller-> verifyUser();
+break;
+
+case 'cerrar_sesion': //Cierra la sesión logueada.
+    $controller = new LoginController();
+    $controller-> endSesion();
 break;
 }

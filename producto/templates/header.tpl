@@ -40,6 +40,18 @@
                                 <a href="solicitudDeRetiro" class="nav-link"><b>| Solicitud de retiro |</b></a>
                             </li>
                         </ul>
+                        {if  !$User}
+                        <div class="navbar-nav ml-auto mx-5">
+                        <li class="nav-item active">
+                        <a class="btn rounded-pill btn-primary py-2 px-4 " href="login"role="button" >Login</a></li>
+                        </div>
+                        {else}
+                            <div class="navbar-nav ml-auto mx-5">
+                            <li class="nav-item active">
+                                <a class="btn rounded-pill btn-primary py-2 px-4 " href="cerrar_sesion"role="button">Logout</a></li>
+                            </div>
+                            {/if}
+                        {if  $User}
                         <div class="navbar-nav ml-auto mx-5">
                             <li class="nav-item dropdown">
                             <a class="btn rounded-pill btn-primary py-2 px-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,6 +64,7 @@
                             </ul>
                             </li>
                         </div>
+                        {/if}
                     </div>
                 </div>
             </nav>
