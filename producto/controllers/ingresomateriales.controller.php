@@ -21,9 +21,10 @@ class IngresoMaterialesController{
 
     public function showIngesoMateriales(){
         $materiales = $this->materialesModel->getAllMateriales();
+        $totalMaterialesCartonero = $this->acopiosModel->getAllAcopiosbyKilos();
         $cartoneros = $this->cartonerosModel->getAllNombreApellidoCartoneros();
         $acopios = $this->acopiosModel->getAllAcopios();
-        $this->view->showIngresoMateriales($materiales,$cartoneros,$acopios);
+        $this->view->showIngresoMateriales($materiales,$cartoneros,$acopios,$totalMaterialesCartonero);
     }
 
     public function addAcopio(){
