@@ -34,7 +34,7 @@
                                 <td>{$cartonero->direccion}</td>
                                 <td>{$cartonero->vehiculo}</td>
                                 <td>
-                                    <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="modifyUrbanRecuperator/{$cartonero->nro_dni}">
+                                    <a type="button" class="btn rounded-pill btn-info text-white py-2 px-4" href="modifyUrbanRecuperator/{$cartonero->tipo_dni}/{$cartonero->nro_dni}">
                                         Editar
                                     </a>  
                                 </td>

@@ -27,11 +27,11 @@ class CartonerosModel extends SystemModel
      * Traigo todos los datos del cartonero 
      * por el ID que se le pasa por parametro
      */
-    public function getUrbanRecuperator($nro_dni){
+    public function getUrbanRecuperator($tipo_dni, $nro_dni){
 
         $db = $this->getDb();
-        $query = $db->prepare("SELECT * FROM cartonero WHERE nro_dni = ?");
-        $query->execute([$nro_dni]);
+        $query = $db->prepare("SELECT * FROM cartonero WHERE tipo_dni = ? AND nro_dni = ?");
+        $query->execute([$tipo_dni, $nro_dni]);
         $urbanRecuperator = $query->fetch(PDO::FETCH_OBJ);
 
         return $urbanRecuperator;
@@ -52,7 +52,7 @@ class CartonerosModel extends SystemModel
     }
 
     public function confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro){
-        //var_dump($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle,$oldType, $oldNro);die();
+        
         $db = $this->getDb();
         $query = $db->prepare("UPDATE cartonero SET nombre=?, apellido=?, tipo_dni=?, nro_dni=?, direccion=?, fecha_nac=?, vehiculo=? WHERE tipo_dni = ? AND nro_dni = ?");
         $query->execute([$name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro]);
@@ -63,7 +63,6 @@ class CartonerosModel extends SystemModel
         $db = $this->getDb();
         $query = $db->prepare("INSERT INTO cartonero(tipo_dni, nro_dni, nombre, apellido, direccion, fecha_nac, vehiculo) VALUES(?,?,?,?,?,?,?)");//prepara la consulta
         $query->execute([$tipo_dni, $nro_dni, $nombre, $apellido, $direccion, $fecha_nac, $vehiculo]);//ejecuta la consulta
-        //var_dump($query); die;
 
     }
 }

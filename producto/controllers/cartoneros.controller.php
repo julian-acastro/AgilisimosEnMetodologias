@@ -64,9 +64,9 @@ class CartonerosController
     /**
      * Obtiene la info para mostrarla en la pantalla de edición
      */
-    public function editFormUR($nro_dni)
-    {
-        $urbanRecuperator = $this->model->getUrbanRecuperator($nro_dni);
+    public function editFormUR($tipo_dni, $nro_dni){
+
+        $urbanRecuperator = $this->model->getUrbanRecuperator($tipo_dni, $nro_dni);
         $this->view->editFormUR($urbanRecuperator);
     }
 
@@ -91,7 +91,7 @@ class CartonerosController
 
             if(empty($duplicate)){
             $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
-            header('Location: ' . BASE_URL . "home");
+            header('Location: ' . BASE_URL . "listaCartoneros");
             }
         }
     }

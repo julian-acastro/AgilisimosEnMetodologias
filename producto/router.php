@@ -158,7 +158,7 @@ switch ($parametros[0]) {
     
     case 'modifyUrbanRecuperator':
         $controller = new CartonerosController();
-        $controller->editFormUR($parametros[1]);
+        $controller->editFormUR($parametros[1], $parametros[2]);
         break;
     
     case 'confirmEdit':
