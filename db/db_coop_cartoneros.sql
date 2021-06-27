@@ -3,11 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
 -- Tiempo de generación: 25-06-2021 a las 04:12:14
-=======
 -- Tiempo de generación: 26-06-2021 a las 02:15:50
->>>>>>> tito
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -131,13 +128,10 @@ INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `tel
 (39, 'Nico', 'Carsaniga', 'Al fondo', '222222'),
 (40, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
 (41, 'Nico', 'Carsaniga', 'San Martin 1097', '222222'),
-<<<<<<< HEAD
 (42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333');
-=======
 (42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333'),
 (43, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
 (44, 'Elva', 'Kehler', 'Garralda 123', '555555555');
->>>>>>> tito
 
 -- --------------------------------------------------------
 
@@ -289,6 +283,7 @@ ALTER TABLE `pedido`
 ALTER TABLE `secretaria`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+git branch
 --
 -- Restricciones para tablas volcadas
 --
