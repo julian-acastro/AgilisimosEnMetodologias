@@ -25,24 +25,26 @@ class MaterialModel extends SystemModel
         return $material;
     }
 
-
     /**
      * Agrega el material a la base de datos
      */
-    public function addMaterial($nombre, $formato, $rechazo){
+    public function addMaterial($nombre, $formato, $rechazo)
+    {
         $db = $this->getDb();
-        $query = $db->prepare("INSERT INTO material(nombre, formato_entrega,restricciones) VALUES(?,?,?)");//prepara la consulta
-        $query->execute([$nombre,$formato,$rechazo]);//ejecuta la consulta
+        $query = $db->prepare("INSERT INTO material(nombre, formato_entrega,restricciones) VALUES(?,?,?)"); //prepara la consulta
+        $query->execute([$nombre, $formato, $rechazo]); //ejecuta la consulta
     }
 
-    public function deleteMaterial($ID){
+    public function deleteMaterial($ID)
+    {
         // enviamos la consulta
         $query = $this->getDb()->prepare("DELETE FROM material WHERE ID_material = ?"); // prepara la consulta
         return $query->execute([$ID]); // ejecuta 
     }
 
     //edita un material
-    public function editMaterial($ID_material, $nombre, $formato_entrega, $restricciones){
+    public function editMaterial($ID_material, $nombre, $formato_entrega, $restricciones)
+    {
         //var_dump($ID_material, $nombre, $formato_entrega, $restricciones); die;
         $consulta = "UPDATE material SET nombre= ?, formato_entrega= ?, restricciones= ? WHERE ID_material = ?";
         $sentencia = $this->getDb()->prepare($consulta); // prepara la consulta

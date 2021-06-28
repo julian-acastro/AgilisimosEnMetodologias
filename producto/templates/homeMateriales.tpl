@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-            </div>   
-        {/foreach} 
+            </div>
+        {/foreach}
     </div>
-</div>
+    </div>

@@ -1,17 +1,16 @@
 <?php
 require_once 'views/ventamateriales.view.php';
-class VentaMaterialesController{
-    private $model;
+class VentaMaterialesController
+{
     private $view;
- //   private $logueado;
+    //   private $logueado;
     public function __construct()
     {
-       
         $this->view = new VentaMaterialesView();
     }
 
-    public function showVentaMateriales(){
+    public function showVentaMateriales()
+    {
         $this->view->ventaMateriales();
     }
-
 }

@@ -1,54 +1,57 @@
 .nav-link {
-    padding: 12px 0px;
-    color: #000000;
-    font-weight: 400;
-  }
-  
-  .nav-link:hover {
-    color: #ffffff;
-  }
+  padding: 12px 0px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
 .bg-success-gradiant {
-    background: #2ed573;
-    background: -webkit-linear-gradient(legacy-direction(to right),#2cdd9b 0%,#2ed573 100%);
-    background: -webkit-linear-gradient(left, #2cdd9b 0%, #2ed573 100%);
-    background: -o-linear-gradient(left, #2cdd9b 0%, #2ed573 100%);
-    background: linear-gradient(to right, #2cdd9b 0%, #2ed573 100%);
+  background: #2ed573;
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #2ed573 100%
+  );
+  background: -webkit-linear-gradient(left, #2cdd9b 0%, #2ed573 100%);
+  background: -o-linear-gradient(left, #2cdd9b 0%, #2ed573 100%);
+  background: linear-gradient(to right, #2cdd9b 0%, #2ed573 100%);
 }
 
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
 }
 
-
-.form-contain{
-    width: auto;
-    padding: 10px 10px;
-    margin: 5px;
-    display: block;
-    border: 2px solid #2ed573;
-    background-color: #72f1a7;
-    border-radius: 16px;
-    text-align: center;
+.form-contain {
+  width: auto;
+  padding: 10px 10px;
+  margin: 5px;
+  display: block;
+  border: 2px solid #2ed573;
+  background-color: #72f1a7;
+  border-radius: 16px;
+  text-align: center;
 }
 
-.form-contain input{
-    margin-bottom: 20px;
+.form-contain input {
+  margin-bottom: 20px;
 }
 
 .oferta_Card:hover {
-    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px #340e8b91;
-    border: none;
-    text-decoration-color: azure;
+  background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px #340e8b91;
+  border: none;
+  text-decoration-color: azure;
 }
 
 .oferta_Card {
-    font-size: 0.8rem;
-    color: hsl(207, 84%, 33%);
+  font-size: 0.8rem;
+  color: hsl(207, 84%, 33%);
 }
 
-.nombre{
-    font-size: 18px;
+.nombre {
+  font-size: 18px;
 }

@@ -67,7 +67,7 @@ switch ($parametros[0]) {
         break;
         // FUNCIONES DE ADMINISTRADOR
 
-    /*case 'cartoneros':
+        /*case 'cartoneros':
         $controller = new CartonerosController();
         $controller->showCartoneros();
         break;*/
@@ -140,6 +140,12 @@ switch ($parametros[0]) {
         $controller->addCartonero();
         break;
 
+    case 'eliminarCartonero':
+        // instanciando un objeto de la clase UserController
+        $controller = new CartonerosController();
+        $controller->deleteCartonero($parametros[1], $parametros[2]);
+        break;
+
         //  FUNCION DE LOGIN
     case 'login':
         $controller = new LoginController();
@@ -155,12 +161,12 @@ switch ($parametros[0]) {
         $controller = new LoginController();
         $controller->endSesion();
         break;
-    
+
     case 'modifyUrbanRecuperator':
         $controller = new CartonerosController();
         $controller->editFormUR($parametros[1], $parametros[2]);
         break;
-    
+
     case 'confirmEdit':
         $controller = new CartonerosController();
         $controller->confirmEdit();

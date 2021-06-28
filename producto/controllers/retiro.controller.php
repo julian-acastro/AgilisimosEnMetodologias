@@ -15,7 +15,7 @@ class RetiroController
     {
         $this->view = new RetiroView();
         $this->maxKm = 6;
-        $this->maxPesoImg = 1048576;      
+        $this->maxPesoImg = 1048576;
         $this->modelPedidos = new ModelPedidosDeRetiro();
         $this->materialesModel = new MaterialModel();
         $this->modelCiudadanos = new CiudadanosModel();
@@ -29,17 +29,19 @@ class RetiroController
 
     public function showListRetiro()
     {
-        $pedidos = $this->modelPedidos->getAllpedidos();       
-        $this->view->vistaListaRetiro( $pedidos);
+        $pedidos = $this->modelPedidos->getAllpedidos();
+        $this->view->vistaListaRetiro($pedidos);
     }
 
     public function enviarSolicitud()
     {
-        if (empty($_POST['nombre']) || empty($_POST['apellido']) || empty($_POST['direccion']) || empty($_POST['telefono']) || empty($_POST['distancia']) || empty($_POST['material']) ||
-            empty($_POST['franja_horaria']) || empty($_POST['volumen']))
-        {
-            $this->view->viewError('Existen uno o mas campos obligatorios vacios');die;
-        }         
+        if (
+            empty($_POST['nombre']) || empty($_POST['apellido']) || empty($_POST['direccion']) || empty($_POST['telefono']) || empty($_POST['distancia']) || empty($_POST['material']) ||
+            empty($_POST['franja_horaria']) || empty($_POST['volumen'])
+        ) {
+            $this->view->viewError('Existen uno o mas campos obligatorios vacios');
+            die;
+        }
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $direccion = $_POST['direccion'];
@@ -53,30 +55,27 @@ class RetiroController
         $ubi_imagen = $_FILES['imagen']["tmp_name"];
         $nombrefinalImagen = "imagen/" . uniqid("", true) . "." . strtolower(pathinfo($nombre_imagen, PATHINFO_EXTENSION));
         move_uploaded_file($ubi_imagen, $nombrefinalImagen);
-      
 
-
-
-        if ($imagen_cargada['size']!=0) {            
+        if ($imagen_cargada['size'] != 0) {
             $peso = $imagen_cargada["size"]; //devuelve el valor en bytes
             $extension = $imagen_cargada["type"];
-           
-            if(!$this->verificarImagen($peso, $extension))
-            {
-                $this->view->viewError('La imagen debe pesar 1Mb como maximo y tener una extension jpg o png');die;
+
+            if (!$this->verificarImagen($peso, $extension)) {
+                $this->view->viewError('La imagen debe pesar 1Mb como maximo y tener una extension jpg o png');
+                die;
             }
         }
-        if ($distancia>6)
-        {
-            $this->view->viewError('La distancia de su domicilio a la planta supera los Km permitidos');die;
-        }       
+        if ($distancia > 6) {
+            $this->view->viewError('La distancia de su domicilio a la planta supera los Km permitidos');
+            die;
+        }
         $id_ciudadano = $this->modelCiudadanos->addCiudadano($nombre, $apellido, $direccion, $telefono);
         var_dump($id_ciudadano);
         $this->modelPedidos->addSolicitud($id_ciudadano, $material, $franja_horaria, $distancia, $nombrefinalImagen, $direccion, $volumen);
         $this->view->viewError('El aviso fue cargado exitosamente'); //avisa si se acepto el aviso de retiro   
-        }         
-       
-    
+    }
+
+
 
     public function verificarImagen($peso, $extension)
     {
