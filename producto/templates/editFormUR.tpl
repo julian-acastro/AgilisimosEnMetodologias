@@ -18,7 +18,7 @@
             <div class="col">
                 <label for="tipo_dni" class="form-label">Tipo Documento</label>
                 <select class="form-select" name="tipo_dni" id="tipo_dni" aria-describedby="emailHelp">
-                    <option disable selected  value="">Seleccione el tipo de documento</option>
+                    <option disable selected  >{$urbanRecuperator->tipo_dni}</option>
                     <option value="dni">DNI</option>
                     <option value="le">LE</option>
                     <option value="lc">LC</option>

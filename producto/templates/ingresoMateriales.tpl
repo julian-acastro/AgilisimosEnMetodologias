@@ -50,7 +50,7 @@
                 </tbody>
             </table>
         </div>
-        <h2 class="col-10 my-5">Materiales por caronero:</h2>
+        <h2 class="col-10 my-5">Materiales por cartonero:</h2>
         <div class="col-10">
             {foreach $cartoneros item=cartonero}
                 <div class="shadow accordion my-3" id="accordionExample">
