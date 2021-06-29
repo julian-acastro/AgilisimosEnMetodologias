@@ -4,22 +4,22 @@
     <div class=" col-lg-12 justify-content-center  border-end border-5 px-5">
         <!--quienes somos-->
         <div class="col-lg-12 text-body text-center border p-3 mt-3">
-                <h1 >COOPERATIVA DE RECICLADORES URBANOS TANDIL</h1>
-                <div class="col-lg-11 text-center">
-                    <p>
-                        El reciclar es un acto de suma importancia para la sociedad ya que el mismo 
-                        supone la reutilización de elementos y objetos de distinto tipo que de otro modo serían desechados, 
-                        contribuyendo a acumular basura y dañar a nuestro planeta.
-                    </p>
-                    <p>
-                        Somos la Cooperativa de Recuperadores Urbanos de Tandil,
-                            tenemos por objetivo acopiar materiales 
-                            reciclables en nuestro depósito
-                        , para ello se puede solicitar su retiro o acercarlos a nuestro 
-                        depósito. 
-                    </p>
-                </div>
+            <h1>COOPERATIVA DE RECICLADORES URBANOS TANDIL</h1>
+            <div class="col-lg-11 text-center">
+                <p>
+                    El reciclar es un acto de suma importancia para la sociedad ya que el mismo
+                    supone la reutilización de elementos y objetos de distinto tipo que de otro modo serían desechados,
+                    contribuyendo a acumular basura y dañar a nuestro planeta.
+                </p>
+                <p>
+                    Somos la Cooperativa de Recuperadores Urbanos de Tandil,
+                    tenemos por objetivo acopiar materiales
+                    reciclables en nuestro depósito
+                    , para ello se puede solicitar su retiro o acercarlos a nuestro
+                    depósito.
+                </p>
             </div>
+        </div>
         <!--Seccion materiales-->
         {include 'homeMateriales.tpl'}
     </div>

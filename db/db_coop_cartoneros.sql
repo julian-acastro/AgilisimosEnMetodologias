@@ -258,7 +258,7 @@ ALTER TABLE `acopio`
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -270,7 +270,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `secretaria`

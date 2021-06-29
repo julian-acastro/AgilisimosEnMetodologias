@@ -2,17 +2,19 @@
 require_once 'views/materiales.view.php';
 require_once 'models/materiales.model.php';
 
-class MaterialesController{
+class MaterialesController
+{
     private $model;
     private $view;
- //   private $logueado;
+    //   private $logueado;
     public function __construct()
     {
         $this->view = new MaterialesView();
         $this->model = new MaterialModel();
     }
 
-    public function showFormMaterial(){
+    public function showFormMaterial()
+    {
         $this->view->showFormMaterial();
     }
 
@@ -24,8 +26,9 @@ class MaterialesController{
         $this->view->materiales($materiales);
     }
 
-    public function deleteMaterial($ID){
-        if(!isset($ID)){
+    public function deleteMaterial($ID)
+    {
+        if (!isset($ID)) {
             header('Location: ' . BASE_URL . "materiales");
             die;
         }
@@ -37,18 +40,19 @@ class MaterialesController{
      * Función para gregar nuevos materiales
      * que la cooperativa acopia
      */
-    public function addItem(){
+    public function addItem()
+    {
         //verifica que este seteado los parametros
-        if(isset($_POST)){
+        if (isset($_POST)) {
             //asigna los valores a las variables
             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
             $formato = isset($_POST['entrega']) ? $_POST['entrega'] : false;
             $rechazo = isset($_POST['rechazo']) ? $_POST['rechazo'] : null;
 
-            
-            if($nombre && $formato){
+
+            if ($nombre && $formato) {
                 //pasa los datos al modelo para ser agregados en la BD
-                $this->model->addMaterial($nombre,$formato,$rechazo);
+                $this->model->addMaterial($nombre, $formato, $rechazo);
             }
         }
         //redirige a materiales
@@ -77,7 +81,6 @@ class MaterialesController{
 
         //redirige a materiales
         header('Location: ' . BASE_URL . "materiales");
-       // $this->endResult('No se pudo editar! Revise su conexión', 'editar_publicacion/' . $id_car, $editcar, $photos);
+        // $this->endResult('No se pudo editar! Revise su conexión', 'editar_publicacion/' . $id_car, $editcar, $photos);
     }
-
 }
