@@ -59,9 +59,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="materiales">Materiales</a></li>
-                                <li><a class="dropdown-item" href="ingresoMateriales">Ingreso de materiales</a></li>
+                                <li><a class="dropdown-item" href="ingresoMateriales">Pesaje de materiales</a></li>
                                 <li><a class="dropdown-item" href="pedidoDeRetiro">Pedidos de retiro</a></li>
-                                <li><a class="dropdown-item" href="altaCartonero">Formulario de alta de cartonero</a></li>
                                 <li><a class="dropdown-item" href="listaCartoneros">Listado de Cartoneros</a></li>
                             </ul>
                             </li>

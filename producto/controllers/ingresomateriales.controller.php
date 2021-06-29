@@ -4,8 +4,8 @@ require_once 'models/materiales.model.php';
 require_once 'models/cartoneros.model.php';
 require_once 'models/acopios.model.php';
 
-class IngresoMaterialesController{
-    private $model;
+class IngresoMaterialesController
+{
     private $view;
     private $materialesModel;
     private $cartonerosModel;
@@ -19,34 +19,35 @@ class IngresoMaterialesController{
         $this->acopiosModel = new AcopiosModel();
     }
 
-    public function showIngesoMateriales(){
+    public function showIngesoMateriales()
+    {
         $materiales = $this->materialesModel->getAllMateriales();
         $totalMaterialesCartonero = $this->acopiosModel->getAllAcopiosbyKilos();
         $cartoneros = $this->cartonerosModel->getAllNombreApellidoCartoneros();
         $acopios = $this->acopiosModel->getAllAcopios();
-        $this->view->showIngresoMateriales($materiales,$cartoneros,$acopios,$totalMaterialesCartonero);
+        $this->view->showIngresoMateriales($materiales, $cartoneros, $acopios, $totalMaterialesCartonero);
     }
 
-    public function addAcopio(){
-        if(isset($_POST)){
+    public function addAcopio()
+    {
+        if (isset($_POST)) {
             //asigna los valores a las variables
             $cartonero = isset($_POST['cartonero']) ? $_POST['cartonero'] : null;
             $ID_material = isset($_POST['material']) ? $_POST['material'] : null;
             $kilos_acopiados = isset($_POST['peso']) ? $_POST['peso'] : null;
 
-            if(!$cartonero || !$ID_material || !$kilos_acopiados){
+            if (!$cartonero || !$ID_material || !$kilos_acopiados) {
                 header('Location: ' . BASE_URL . "ingresoMateriales");
                 die;
             }
             $cartonero = explode('/', $cartonero);
             $tipo_dni = $cartonero[0];
             $nro_dni = $cartonero[1];
-            
+
             //pasa los datos al modelo para ser agregados en la BD
-            $query = $this->acopiosModel->addAcopio($ID_material, $tipo_dni, $nro_dni,(int)$kilos_acopiados);
+            $query = $this->acopiosModel->addAcopio($ID_material, $tipo_dni, $nro_dni, (int)$kilos_acopiados);
         }
         //redirige a materiales
         header('Location: ' . BASE_URL . "ingresoMateriales");
     }
-
 }

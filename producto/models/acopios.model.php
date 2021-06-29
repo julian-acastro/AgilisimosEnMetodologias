@@ -19,7 +19,7 @@ class AcopiosModel extends SystemModel
         return $acopios;
     }
 
-    public function getAllAcopiosbyKilos()
+    public function getAllAcopiosByKilos()
     {
         $consulta = "SELECT a.nro_dni,SUM(a.kilos_acopiados) AS kilos_acopiados,m.nombre AS nombre_material
                     FROM acopio a 
@@ -33,9 +33,10 @@ class AcopiosModel extends SystemModel
         return $acopios;
     }
 
-    public function addAcopio($ID_material, $tipo_dni, $nro_dni,$kilos_acopiados){
+    public function addAcopio($ID_material, $tipo_dni, $nro_dni, $kilos_acopiados)
+    {
         $db = $this->getDb();
-        $query = $db->prepare("INSERT INTO acopio (ID_material,tipo_dni,nro_dni,kilos_acopiados) VALUES(?,?,?,?)");//prepara la consulta
-        $query->execute([$ID_material, $tipo_dni, $nro_dni,$kilos_acopiados]);//ejecuta la consulta
+        $query = $db->prepare("INSERT INTO acopio (ID_material,tipo_dni,nro_dni,kilos_acopiados) VALUES(?,?,?,?)"); //prepara la consulta
+        $query->execute([$ID_material, $tipo_dni, $nro_dni, $kilos_acopiados]); //ejecuta la consulta
     }
 }

@@ -1,17 +1,18 @@
 <?php
 require_once 'views/buenaonda.view.php';
-class BuenaOndaController{
+class BuenaOndaController
+{
     private $model;
     private $view;
- //   private $logueado;
+    //   private $logueado;
     public function __construct()
     {
-       
+
         $this->view = new BuenaOndaView();
     }
 
-    public function showFormOfertaTransporte(){
+    public function showFormOfertaTransporte()
+    {
         $this->view->ofertaTransporte();
     }
-
 }

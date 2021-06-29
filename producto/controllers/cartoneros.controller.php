@@ -1,15 +1,18 @@
 <?php
 require_once 'views/cartoneros.view.php';
 require_once 'models/cartoneros.model.php';
+require_once 'views/error.view.php';
 class CartonerosController
 {
     private $model;
     private $view;
+    private $errorView;
     //   private $logueado;
     public function __construct()
     {
         $this->model = new CartonerosModel();
         $this->view = new CartonerosView();
+        $this->errorView = new ErrorView();
     }
 
     public function showCartoneros()
@@ -22,16 +25,18 @@ class CartonerosController
         $this->view->showFormCartonero();
     }
 
-    public function listaCartoneros(){
+    public function listaCartoneros()
+    {
         $cartoneros = $this->model->getAll();
         $this->view->listaCartoneros($cartoneros);
     }
 
     //Funcion para agregar nuevo Cartonero
 
-    public function addCartonero(){
+    public function addCartonero()
+    {
         //verifica que esten seteado los parametros
-        if(isset($_POST)){
+        if (isset($_POST)) {
 
             //asigna los valores a las variables
             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
@@ -42,29 +47,31 @@ class CartonerosController
             $fecha_nac = isset($_POST['fecha_nac']) ? $_POST['fecha_nac'] : false;
             $vehiculo = isset($_POST['vehiculo']) ? $_POST['vehiculo'] : false;
 
-            
-            if($nombre && $apellido && $tipo_dni && $nro_dni && $direccion && $fecha_nac && $vehiculo){
+
+            if ($nombre && $apellido && $tipo_dni && $nro_dni && $direccion && $fecha_nac && $vehiculo) {
 
                 $duplicate = $this->model->verifyExist($tipo_dni, $nro_dni);
-                
 
-                if(empty($duplicate)){
+
+                if (empty($duplicate)) {
                     //pasa los datos al modelo para ser agregados en la BD
                     $this->model->addCartonero($nombre, $apellido, $tipo_dni, $nro_dni, $direccion, $fecha_nac, $vehiculo);
                     //redirige a home
-                    header('Location: ' . BASE_URL . "listaCartoneros"); die;
+                    header('Location: ' . BASE_URL . "listaCartoneros");
+                    die;
                 }
             }
         }
         //redirige a materiales
         header('Location: ' . BASE_URL . "home");
     }
-    
+
 
     /**
      * Obtiene la info para mostrarla en la pantalla de edición
      */
-    public function editFormUR($tipo_dni, $nro_dni){
+    public function editFormUR($tipo_dni, $nro_dni)
+    {
 
         $urbanRecuperator = $this->model->getUrbanRecuperator($tipo_dni, $nro_dni);
         $this->view->editFormUR($urbanRecuperator);
@@ -89,10 +96,33 @@ class CartonerosController
 
             $duplicate = $this->model->verifyExist($doc_type, $doc_nro);
 
-            if(empty($duplicate)){
-            $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
-            header('Location: ' . BASE_URL . "listaCartoneros");
+
+            if ($duplicate) {
+                $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
+                header('Location: ' . BASE_URL . "listaCartoneros");
+
+                if (empty($duplicate)) {
+                    $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
+                    header('Location: ' . BASE_URL . "listaCartoneros");
+                } else {
+                    $this->errorView->viewError('Ya existe usuario con el mismo documento');
+                }
             }
+        } else {
+            $this->errorView->viewError('Faltan datos obligatorios');
         }
+    }
+
+    /**
+     * Funcion borrado del cartonero
+     */
+    public function deleteCartonero($tipo_dni, $nro_dni)
+    {
+        if (!isset($tipo_dni, $nro_dni)) {
+            header('Location: ' . BASE_URL . "listaCartoneros");
+            die;
+        }
+        $this->model->deleteCartonero($tipo_dni, $nro_dni);
+        header('Location: ' . BASE_URL . "listaCartoneros");
     }
 }

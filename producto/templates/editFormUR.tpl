@@ -18,7 +18,7 @@
             <div class="col">
                 <label for="tipo_dni" class="form-label">Tipo Documento</label>
                 <select class="form-select" name="tipo_dni" id="tipo_dni" aria-describedby="emailHelp">
-                    <option selected>Seleccione el tipo de documento</option>
+                    <option disable selected  >{$urbanRecuperator->tipo_dni}</option>
                     <option value="dni">DNI</option>
                     <option value="le">LE</option>
                     <option value="lc">LC</option>
@@ -45,7 +45,7 @@
             <label for="vehiculo" class="form-label">Vehículo</label>
             <select class="form-select" name="vehiculo" id="vehiculo" placeholder="Ingrese Marca y Modelo"
                 aria-describedby="emailHelp">
-                <option selected>Seleccione el tipo de vehículo</option>
+                <option disable selected  value="">Seleccione el tipo de vehículo</option>
                 <option value="bicicleta">Bicicleta</option>
                 <option value="moto">Moto</option>
                 <option value="auto">Auto</option>
