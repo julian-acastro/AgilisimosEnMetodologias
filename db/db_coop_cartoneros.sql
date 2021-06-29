@@ -3,8 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2021 a las 04:12:14
--- Tiempo de generación: 26-06-2021 a las 02:15:50
+-- Tiempo de generación: 29-06-2021 a las 05:53:57
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -67,7 +66,7 @@ CREATE TABLE `cartonero` (
 --
 
 INSERT INTO `cartonero` (`tipo_dni`, `nro_dni`, `nombre`, `apellido`, `direccion`, `fecha_nac`, `vehiculo`) VALUES
-('dni', 12345678, 'Pepe', 'Cibrian', 'a la vuelta de la esquina', '2021-06-01', 'Auto'),
+('dni', 12345678, 'Pepe', 'Cibrian', 'hotel', '2021-06-01', 'camion'),
 ('dni', 25368958, 'Raúl', 'Gonzalez', 'San Martín', '2021-06-08', 'Bicicleta'),
 ('dni', 43664912, 'Julian', 'Pérez', 'Piedras 123', '2021-04-01', 'Camión');
 
@@ -259,7 +258,6 @@ ALTER TABLE `acopio`
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
   MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
@@ -272,7 +270,6 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
   MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
@@ -280,7 +277,7 @@ ALTER TABLE `pedido`
 --
 ALTER TABLE `secretaria`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-git branch
+
 --
 -- Restricciones para tablas volcadas
 --
