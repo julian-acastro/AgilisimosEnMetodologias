@@ -74,6 +74,7 @@ class CartonerosController
     {
 
         $urbanRecuperator = $this->model->getUrbanRecuperator($tipo_dni, $nro_dni);
+        
         $this->view->editFormUR($urbanRecuperator);
     }
 

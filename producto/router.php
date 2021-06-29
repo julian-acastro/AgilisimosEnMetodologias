@@ -9,7 +9,7 @@ require_once 'controllers/materiales.controller.php';
 require_once 'controllers/ingresomateriales.controller.php';
 require_once 'controllers/ventamateriales.controller.php';
 require_once 'controllers/registro.controller.php';
-require_once 'controllers/login.controller.php';
+
 
 
 

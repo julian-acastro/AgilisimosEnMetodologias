@@ -223,6 +223,10 @@ ALTER TABLE `pedido`
 ALTER TABLE `secretaria`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+<<<<<<< HEAD
+git branch
+=======
+>>>>>>> sprint3
 --
 -- Restricciones para tablas volcadas
 --
