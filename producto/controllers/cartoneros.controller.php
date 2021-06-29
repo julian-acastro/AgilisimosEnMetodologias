@@ -89,7 +89,7 @@ class CartonerosController
 
             $duplicate = $this->model->verifyExist($doc_type, $doc_nro);
 
-            if(empty($duplicate)){
+            if($duplicate){
             $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
             header('Location: ' . BASE_URL . "listaCartoneros");
             }

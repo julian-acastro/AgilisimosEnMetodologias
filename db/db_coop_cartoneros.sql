@@ -128,7 +128,6 @@ INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `tel
 (39, 'Nico', 'Carsaniga', 'Al fondo', '222222'),
 (40, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
 (41, 'Nico', 'Carsaniga', 'San Martin 1097', '222222'),
-(42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333');
 (42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333'),
 (43, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
 (44, 'Elva', 'Kehler', 'Garralda 123', '555555555');
