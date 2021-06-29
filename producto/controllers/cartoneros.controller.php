@@ -1,15 +1,18 @@
 <?php
 require_once 'views/cartoneros.view.php';
 require_once 'models/cartoneros.model.php';
+require_once 'views/error.view.php';
 class CartonerosController
 {
     private $model;
     private $view;
+    private $errorView;
     //   private $logueado;
     public function __construct()
     {
         $this->model = new CartonerosModel();
         $this->view = new CartonerosView();
+        $this->errorView = new ErrorView();
     }
 
     public function showCartoneros()
@@ -93,16 +96,20 @@ class CartonerosController
 
             $duplicate = $this->model->verifyExist($doc_type, $doc_nro);
 
-<<<<<<< HEAD
-            if($duplicate){
-            $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
-            header('Location: ' . BASE_URL . "listaCartoneros");
-=======
-            if (empty($duplicate)) {
+
+            if ($duplicate) {
                 $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
                 header('Location: ' . BASE_URL . "listaCartoneros");
->>>>>>> 652207858695f50420529abcc7fb37f364fffb07
+
+                if (empty($duplicate)) {
+                    $this->model->confirmEdit($name, $surname, $doc_type, $doc_nro, $adress, $birth, $vehicle, $oldType, $oldNro);
+                    header('Location: ' . BASE_URL . "listaCartoneros");
+                } else {
+                    $this->errorView->viewError('Ya existe usuario con el mismo documento');
+                }
             }
+        } else {
+            $this->errorView->viewError('Faltan datos obligatorios');
         }
     }
 
