@@ -180,7 +180,6 @@ CREATE TABLE `pedido` (
 INSERT INTO `pedido` (`ID_pedido`, `ciudadano`, `material`, `franja_horaria`, `cumple_retiro`, `imagen`, `direccion`, `fecha_y_hora`, `volumen`) VALUES
 (34, 40, 5, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52d85dfc2d7.54393403.jpg', 'San Martin 1097', '2021-06-25 06:12:00', 'entra en una caja.'),
 (35, 41, 8, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52dad87eaf9.71896316.jpg', 'San Martin 1097', '2021-06-25 06:13:00', 'entra en la caja de una camion'),
-(36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.');
 (36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.'),
 (38, 44, 9, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d66e1e40d240.18512162.jpg', 'Garralda 123', '2021-06-26 05:00:00', 'entra en el baúl de un auto.');
 
