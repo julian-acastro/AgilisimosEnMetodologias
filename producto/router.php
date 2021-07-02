@@ -1,149 +1,174 @@
 <?php
-    require_once 'controllers/home.controller.php';
-    require_once 'controllers/retiro.controller.php';
-    require_once 'controllers/buenaonda.controller.php';
-    require_once 'controllers/postular.controller.php';
-    require_once 'controllers/login.controller.php';
-    require_once 'controllers/cartoneros.controller.php';
-    require_once 'controllers/materiales.controller.php';
-    require_once 'controllers/ingresomateriales.controller.php';
-    require_once 'controllers/ventamateriales.controller.php';
-    require_once 'controllers/registro.controller.php';
-    require_once 'controllers/login.controller.php';
+require_once 'controllers/home.controller.php';
+require_once 'controllers/retiro.controller.php';
+require_once 'controllers/buenaonda.controller.php';
+require_once 'controllers/postular.controller.php';
+require_once 'controllers/login.controller.php';
+require_once 'controllers/cartoneros.controller.php';
+require_once 'controllers/materiales.controller.php';
+require_once 'controllers/ingresomateriales.controller.php';
+require_once 'controllers/ventamateriales.controller.php';
+require_once 'controllers/registro.controller.php';
 
-    
 
-    // definimos la base url de forma dinamica
-    define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-    // define una acción por defecto
-    if (empty($_GET['action'])) {
-        $_GET['action'] = 'home';
-    } 
-     
 
-    // toma la acción que viene del usuario y parsea los parámetros
-    $accion = $_GET['action']; 
-    $parametros = explode('/', $accion);
-    
+// definimos la base url de forma dinamica
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-    // decide que camino tomar según TABLA DE RUTEO
-    switch ($parametros[0]) {
+// define una acción por defecto
+if (empty($_GET['action'])) {
+    $_GET['action'] = 'home';
+}
+
+// toma la acción que viene del usuario y parsea los parámetros
+$accion = $_GET['action'];
+$parametros = explode('/', $accion);
+
+
+// decide que camino tomar según TABLA DE RUTEO
+switch ($parametros[0]) {
 
         //ACCIONES DE ACCESO PÚBLICO
 
-        case 'home':              //Muestra el Home de la página
-          $controller= new HomeController();
-          $controller->showHome();
-        break;
-       
-        case 'solicitudDeRetiro': 
-            $controller= new RetiroController();
-            $controller->showFormRetiro();           
+    case 'home':              //Muestra el Home de la página
+        $controller = new HomeController();
+        $controller->showHome();
         break;
 
-        case 'enviarSolicitud': 
-            $controller= new RetiroController();
-            $controller->enviarSolicitud();           
+    case 'solicitudDeRetiro':
+        $controller = new RetiroController();
+        $controller->showFormRetiro();
         break;
 
-        case 'ciudadanoBuenaOnda':       
-            $controller= new BuenaOndaController();
-            $controller->showFormOfertaTransporte();
+    case 'enviarSolicitud':
+        $controller = new RetiroController();
+        $controller->enviarSolicitud();
         break;
 
-        case 'postular':       
-            $controller= new PostularController();
-            $controller->showFormPostular();
+    case 'ciudadanoBuenaOnda':
+        $controller = new BuenaOndaController();
+        $controller->showFormOfertaTransporte();
         break;
 
-        case 'login': 
-            $controller= new LoginController();
-            $controller->showFormLogin();
+    case 'postular':
+        $controller = new PostularController();
+        $controller->showFormPostular();
         break;
 
-        case 'registro': 
-            $controller= new RegistroController();
-            $controller->showFormRegistro();
+    case 'login':
+        $controller = new LoginController();
+        $controller->showFormLogin();
         break;
-// FUNCIONES DE ADMINISTRADOR
 
-case 'cartoneros': 
-    $controller= new CartonerosController();
-    $controller->showCartoneros();
-break;
+    case 'registro':
+        $controller = new RegistroController();
+        $controller->showFormRegistro();
+        break;
+        // FUNCIONES DE ADMINISTRADOR
 
-case 'materiales': 
-    $controller= new MaterialesController();
-    $controller->showMateriales();
-break;
+        /*case 'cartoneros':
+        $controller = new CartonerosController();
+        $controller->showCartoneros();
+        break;*/
 
-case 'ingresoMateriales': 
-    $controller= new IngresoMaterialesController();
-    $controller->showIngesoMateriales();
-break;
+    case 'materiales':
+        $controller = new MaterialesController();
+        $controller->showMateriales();
+        break;
+
+    case 'ingresoMateriales':
+        $controller = new IngresoMaterialesController();
+        $controller->showIngesoMateriales();
+        break;
 
 
-case 'ventaMateriales': 
-    $controller= new VentaMaterialesController();
-    $controller->showVentaMateriales();
-break;
+    case 'ventaMateriales':
+        $controller = new VentaMaterialesController();
+        $controller->showVentaMateriales();
+        break;
 
-case 'altaMaterial':
-    $controller = new MaterialesController();
-    $controller->showFormMaterial();
-break;
+    case 'altaMaterial':
+        $controller = new MaterialesController();
+        $controller->showFormMaterial();
+        break;
 
-case 'addMaterial':
-    $controller = new MaterialesController();
-    $controller->addItem();
-break;
+    case 'addMaterial':
+        $controller = new MaterialesController();
+        $controller->addItem();
+        break;
 
-case 'agregarAcopio':
-    $controller = new IngresoMaterialesController();
-    $controller->addAcopio();
-break;
+    case 'agregarAcopio':
+        $controller = new IngresoMaterialesController();
+        $controller->addAcopio();
+        break;
 
-case 'pedidoDeRetiro':
-    $controller = new RetiroController();
-    $controller->showListRetiro();
-break;
+    case 'pedidoDeRetiro':
+        $controller = new RetiroController();
+        $controller->showListRetiro();
+        break;
 
-case 'eliminarMaterial':
-    // instanciando un objeto de la clase UserController
-    $controller = new MaterialesController();
-    $controller->deleteMaterial($parametros[1]);
-    break;
+    case 'eliminarMaterial':
+        // instanciando un objeto de la clase UserController
+        $controller = new MaterialesController();
+        $controller->deleteMaterial($parametros[1]);
+        break;
 
-case 'editarMaterial':
-    // instanciando un objeto de la clase UserController
-    $controller = new MaterialesController();
-    $controller->showFormEditMaterial($parametros[1]);
-    break;
+    case 'editarMaterial':
+        // instanciando un objeto de la clase UserController
+        $controller = new MaterialesController();
+        $controller->showFormEditMaterial($parametros[1]);
+        break;
 
-case 'editMaterial':
-    $controller = new MaterialesController();
-    $controller->editMaterial();
-break;    
+    case 'editMaterial':
+        $controller = new MaterialesController();
+        $controller->editMaterial();
+        break;
 
-case 'altaCartonero': //esto hay q linkearlo desde el listado de cartoneros!!!!
-    $controller = new CartonerosController();
-    $controller->showFormCartonero();
-break;  
+    case 'listaCartoneros':
+        $controller = new CartonerosController();
+        $controller->listaCartoneros();
+        break;
 
-//  FUNCION DE LOGIN
-case 'login':
-    $controller = new LoginController();
-    $controller->showFormLogin();
-break;
+    case 'altaCartonero':
+        $controller = new CartonerosController();
+        $controller->showFormCartonero();
+        break;
 
-case 'verifyUser':  //Verifica usuario existente, desde ACTION del formulario
-    $controller = new LoginController();
-    $controller-> verifyUser();
-break;
+    case 'addCartonero':
+        $controller = new CartonerosController();
+        $controller->addCartonero();
+        break;
 
-case 'cerrar_sesion': //Cierra la sesión logueada.
-    $controller = new LoginController();
-    $controller-> endSesion();
-break;
+    case 'eliminarCartonero':
+        // instanciando un objeto de la clase UserController
+        $controller = new CartonerosController();
+        $controller->deleteCartonero($parametros[1], $parametros[2]);
+        break;
+
+        //  FUNCION DE LOGIN
+    case 'login':
+        $controller = new LoginController();
+        $controller->showFormLogin();
+        break;
+
+    case 'verifyUser':  //Verifica usuario existente, desde ACTION del formulario
+        $controller = new LoginController();
+        $controller->verifyUser();
+        break;
+
+    case 'cerrar_sesion': //Cierra la sesión logueada.
+        $controller = new LoginController();
+        $controller->endSesion();
+        break;
+
+    case 'modifyUrbanRecuperator':
+        $controller = new CartonerosController();
+        $controller->editFormUR($parametros[1], $parametros[2]);
+        break;
+
+    case 'confirmEdit':
+        $controller = new CartonerosController();
+        $controller->confirmEdit();
+        break;
 }

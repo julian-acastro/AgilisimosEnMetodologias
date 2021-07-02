@@ -1,17 +1,16 @@
 <?php
 require_once 'views/postular.view.php';
-class PostularController{
-    private $model;
+class PostularController
+{
     private $view;
- //   private $logueado;
+    //   private $logueado;
     public function __construct()
     {
-       
         $this->view = new PostularView();
     }
 
-    public function showFormPostular(){
+    public function showFormPostular()
+    {
         $this->view->formPostular();
     }
-
 }

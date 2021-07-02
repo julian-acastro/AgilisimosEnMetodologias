@@ -11,7 +11,7 @@
             <textarea class="form-control" name="entrega" id="formatoEntrega" rows="3"></textarea>
         </div>
         <div class="form-outline mb-4">
-            <label class="form-label" for="exepcion">Exepción</label>
+            <label class="form-label" for="exepcion">Restricciones</label>
             <textarea class="form-control" name="rechazo" id="exepcion" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Agregar Material</button>

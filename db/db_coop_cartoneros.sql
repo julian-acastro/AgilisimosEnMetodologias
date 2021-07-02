@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 25-06-2021 a las 04:12:14
-=======
--- Tiempo de generación: 26-06-2021 a las 02:15:50
->>>>>>> tito
+-- Tiempo de generación: 29-06-2021 a las 21:23:57
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -37,17 +33,17 @@ CREATE TABLE `acopio` (
   `tipo_dni` varchar(3) NOT NULL,
   `nro_dni` int(11) NOT NULL,
   `kilos_acopiados` double(8,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `acopio`
 --
 
 INSERT INTO `acopio` (`ID_acopio`, `ID_material`, `tipo_dni`, `nro_dni`, `kilos_acopiados`) VALUES
-(3, 5, 'dni', 25368958, 100.00),
-(7, 5, 'dni', 43664912, 655.00),
-(8, 10, 'dni', 43664912, 10.00),
-(9, 8, 'dni', 12345678, 40.00);
+(1, 1, 'DNI', 33333333, 100.00),
+(2, 2, 'DNI', 111111111, 500.00),
+(3, 4, 'dni', 2147483647, 20.00),
+(4, 3, 'DNI', 33333333, 30.00);
 
 -- --------------------------------------------------------
 
@@ -63,16 +59,16 @@ CREATE TABLE `cartonero` (
   `direccion` varchar(30) NOT NULL,
   `fecha_nac` date NOT NULL,
   `vehiculo` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cartonero`
 --
 
 INSERT INTO `cartonero` (`tipo_dni`, `nro_dni`, `nombre`, `apellido`, `direccion`, `fecha_nac`, `vehiculo`) VALUES
-('dni', 12345678, 'Pepe', 'Cibrian', 'a la vuelta de la esquina', '2021-06-01', 'Auto'),
-('dni', 25368958, 'Raúl', 'Gonzalez', 'San Martín', '2021-06-08', 'Bicicleta'),
-('dni', 43664912, 'Julian', 'Pérez', 'Piedras 123', '2021-04-01', 'Camión');
+('DNI', 33333333, 'Nacho', 'El campero', 'el campo', '1998-05-29', 'Camioneta'),
+('DNI', 111111111, 'Zurdo', 'Castro', 'a la vuelta de su CASA', '2021-06-29', 'camion'),
+('dni', 2147483647, 'Cacho', 'Cambiatodo', 'Con el Nico', '2000-06-29', 'camion');
 
 -- --------------------------------------------------------
 
@@ -86,58 +82,7 @@ CREATE TABLE `ciudadano` (
   `apellido` varchar(30) NOT NULL DEFAULT 'Buena onda',
   `direccion` varchar(30) NOT NULL DEFAULT 'Cooperativa',
   `telefono` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `ciudadano`
---
-
-INSERT INTO `ciudadano` (`ID_ciudadano`, `nombre`, `apellido`, `direccion`, `telefono`) VALUES
-(1, 'Ciudadano', 'Buena onda', 'Cooperativa', '0303456'),
-(5, 'Juan ', 'Paco', 'Pedro de la Mar 125', '0303456'),
-(6, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(7, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(8, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(9, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(10, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(11, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(12, 'Adriana', 'Grigoli', 'San Martin 1097', ''),
-(13, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(14, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(15, 'cacho', 'nico', 'pppp', '1023164'),
-(16, 'tito', 'es mejor', 'que nico', '454546465'),
-(17, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(18, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(19, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
-(20, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
-(21, 'Sergio', 'Yañez', 'Barrio Falucho casa 74, SN', '222222'),
-(22, 'Damian', 'Yañez', 'Garralda345', '4444444444'),
-(23, 'Damian', 'Yañez', 'Garralda 123', '7777777777'),
-(24, 'Marti', 'Yañez', 'Barrio Falucho casa 74, SN', '33333333'),
-(25, 'Isa', 'Yañez', 'ALBERTI 560', '4444444444'),
-(26, 'Adriana', 'Grigoli', 'San Martin 1097', '7777777777'),
-(27, 'Adriana', 'Grigoli', 'San Martin 1097', '7777777777'),
-(28, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(29, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(30, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(31, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(32, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(33, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(34, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(35, 'Carmen', 'GrigoliGiusto', 'ALBERTI 560', '222222'),
-(36, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(37, 'Adriana', 'Grigoli', 'San Martin 1097', '222222'),
-(38, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(39, 'Nico', 'Carsaniga', 'Al fondo', '222222'),
-(40, 'Adriana', 'Grigoli', 'San Martin 1097', '1111111111'),
-(41, 'Nico', 'Carsaniga', 'San Martin 1097', '222222'),
-<<<<<<< HEAD
-(42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333');
-=======
-(42, 'Zurdo', 'Arreglo_Imagen', 'Que_tito_no_pudo', '33333333'),
-(43, 'Adriana', 'Grigoli', 'San Martin 1097', '2421241215'),
-(44, 'Elva', 'Kehler', 'Garralda 123', '555555555');
->>>>>>> tito
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -150,17 +95,18 @@ CREATE TABLE `material` (
   `nombre` varchar(20) NOT NULL,
   `formato_entrega` varchar(100) NOT NULL,
   `restricciones` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `material`
 --
 
 INSERT INTO `material` (`ID_material`, `nombre`, `formato_entrega`, `restricciones`) VALUES
-(5, 'Plásticos', 'Con muchas restricciones', 'No se aceptan envases de yogurt y de queso blanco'),
-(8, 'Tetra-Brick', 'llenitos', 'Sin contenido'),
-(9, 'Latas de aluminio', 'Aplastadas y secas', 'Sin contenido'),
-(10, 'Botellas de vidrio', 'Enteras y secas', 'Sin roturas mayores y sin contenido');
+(1, 'Papel', 'Embalado, seco, y limpio', 'Hasta ahora no hay.'),
+(2, 'Tetrabrik', 'Totalmente vacios, aplastado, embalado', 'Con liquido en su interior'),
+(3, 'Botellas de vidrio', 'Limpias, sin liquido en su interior', 'Botellas rotas'),
+(4, 'Latas Aluminio', 'Aplastadas', 'NO hay hasta ahora'),
+(5, 'Cartón', 'Embalado y cajas desarmadas', 'No tiene');
 
 -- --------------------------------------------------------
 
@@ -172,26 +118,13 @@ CREATE TABLE `pedido` (
   `ID_pedido` int(11) NOT NULL,
   `ciudadano` int(11) NOT NULL,
   `material` int(11) NOT NULL,
-  `franja_horaria` varchar(30) NOT NULL,
+  `franja_horaria` varchar(10) NOT NULL,
   `cumple_retiro` tinyint(1) NOT NULL,
-  `imagen` varchar(200) DEFAULT NULL,
+  `imagen` varchar(30) DEFAULT NULL,
   `direccion` varchar(30) NOT NULL,
   `fecha_y_hora` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `volumen` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `pedido`
---
-
-INSERT INTO `pedido` (`ID_pedido`, `ciudadano`, `material`, `franja_horaria`, `cumple_retiro`, `imagen`, `direccion`, `fecha_y_hora`, `volumen`) VALUES
-(34, 40, 5, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52d85dfc2d7.54393403.jpg', 'San Martin 1097', '2021-06-25 06:12:00', 'entra en una caja.'),
-(35, 41, 8, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52dad87eaf9.71896316.jpg', 'San Martin 1097', '2021-06-25 06:13:00', 'entra en la caja de una camion'),
-<<<<<<< HEAD
-(36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.');
-=======
-(36, 42, 10, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d52f0588c2c7.01534752.jpg', 'Que_tito_no_pudo', '2021-06-25 06:19:00', 'entra en el baúl de un auto.'),
-(38, 44, 9, 'Turno mañana de 9 am a 12 am', 1, 'imagen/60d66e1e40d240.18512162.jpg', 'Garralda 123', '2021-06-26 05:00:00', 'entra en el baúl de un auto.');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -211,7 +144,6 @@ CREATE TABLE `secretaria` (
 
 INSERT INTO `secretaria` (`id_usuario`, `usuario`, `contrasenia`) VALUES
 (1, 'secretaria', '$2y$10$3kMdKdDng8QgFRypZdw.CuVsXVwdIIcZ4EdFsysN069SbeAeAu.LS');
->>>>>>> tito
 
 --
 -- Índices para tablas volcadas
@@ -247,8 +179,9 @@ ALTER TABLE `material`
 -- Indices de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`ID_pedido`) USING BTREE,
-  ADD KEY `ciudadano` (`ciudadano`,`material`);
+  ADD PRIMARY KEY (`ID_pedido`,`ciudadano`,`material`),
+  ADD UNIQUE KEY `AK_CIUDADANO_PEDIDO` (`ciudadano`),
+  ADD UNIQUE KEY `AK_PEDIDO_MATERIAL` (`material`);
 
 --
 -- Indices de la tabla `secretaria`
@@ -264,40 +197,36 @@ ALTER TABLE `secretaria`
 -- AUTO_INCREMENT de la tabla `acopio`
 --
 ALTER TABLE `acopio`
-  MODIFY `ID_acopio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID_acopio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudadano`
 --
 ALTER TABLE `ciudadano`
-<<<<<<< HEAD
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-=======
-  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
->>>>>>> tito
+  MODIFY `ID_ciudadano` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `ID_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-<<<<<<< HEAD
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-=======
-  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `secretaria`
 --
 ALTER TABLE `secretaria`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> tito
 
+<<<<<<< HEAD
+git branch
+=======
+>>>>>>> sprint3
 --
 -- Restricciones para tablas volcadas
 --
@@ -306,15 +235,15 @@ ALTER TABLE `secretaria`
 -- Filtros para la tabla `acopio`
 --
 ALTER TABLE `acopio`
-  ADD CONSTRAINT `FK_ACOPIO_CARTONERO` FOREIGN KEY (`tipo_dni`,`nro_dni`) REFERENCES `cartonero` (`tipo_dni`, `nro_dni`),
-  ADD CONSTRAINT `acopio_ibfk_1` FOREIGN KEY (`ID_material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_ACOPIO_CARTONERO` FOREIGN KEY (`tipo_dni`,`nro_dni`) REFERENCES `cartonero` (`tipo_dni`, `nro_dni`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_ACOPIO_MATERIAL` FOREIGN KEY (`ID_material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`),
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_PEDIDO_CIUDADANO` FOREIGN KEY (`ciudadano`) REFERENCES `ciudadano` (`ID_ciudadano`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PEDIDO_MATERIAL` FOREIGN KEY (`material`) REFERENCES `material` (`ID_material`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
